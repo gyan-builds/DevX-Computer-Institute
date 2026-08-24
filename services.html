@@ -1,0 +1,2999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0A192F">
+<meta name="description" content="Explore professional courses, training services, practical labs, certifications, internships and career programs at DevX Computer Institute.">
+<title>Courses & Training Services | DevX Computer Institute</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+
+:root {
+    --navy: #0A192F;
+    --navy-deep: #071221;
+    --navy-soft: #12243F;
+    --ivory: #F8F9FA;
+    --white: #FFFFFF;
+    --charcoal: #1E293B;
+    --slate: #64748B;
+    --muted: #94A3B8;
+    --crimson: #8B0000;
+    --crimson-dark: #690000;
+    --gold: #D4AF37;
+    --gold-light: #E5C85E;
+    --border: #E2E8F0;
+    --surface: #F1F4F7;
+    --success: #1D6B50;
+    --shadow-sm: 0 10px 28px rgba(10,25,47,.07);
+    --shadow-md: 0 20px 50px rgba(10,25,47,.12);
+    --shadow-lg: 0 34px 82px rgba(10,25,47,.18);
+    --radius-sm: 8px;
+    --radius-md: 18px;
+    --radius-lg: 28px;
+    --container: 1240px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    min-width: 0;
+    overflow-x: hidden;
+    background: var(--ivory);
+    color: var(--charcoal);
+    font-family: "Inter", sans-serif;
+    line-height: 1.65;
+}
+
+body.menu-open,
+body.modal-open {
+    overflow: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    border: 0;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+section {
+    scroll-margin-top: 108px;
+}
+
+.container {
+    width: min(calc(100% - 40px), var(--container));
+    margin-inline: auto;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--crimson);
+    font-size: .75rem;
+    font-weight: 800;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.eyebrow::before {
+    content: "";
+    width: 30px;
+    height: 2px;
+    background: var(--gold);
+}
+
+.section-title {
+    max-width: 900px;
+    color: var(--navy);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2.1rem, 4.5vw, 3.8rem);
+    line-height: 1.1;
+    letter-spacing: -.04em;
+}
+
+.section-copy {
+    max-width: 720px;
+    margin-top: 17px;
+    color: var(--slate);
+    font-size: 1.01rem;
+}
+
+.btn {
+    position: relative;
+    min-height: 51px;
+    padding: 0 21px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    cursor: pointer;
+    overflow: hidden;
+    font-size: .89rem;
+    font-weight: 800;
+    transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: var(--crimson);
+    color: var(--white);
+    box-shadow: 0 14px 32px rgba(139,0,0,.22);
+}
+
+.btn-primary:hover {
+    background: var(--crimson-dark);
+    box-shadow: 0 18px 40px rgba(139,0,0,.29);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--navy);
+    border: 1px solid rgba(10,25,47,.17);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+    border-color: var(--gold);
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: var(--navy);
+    box-shadow: 0 13px 30px rgba(212,175,55,.2);
+}
+
+.btn-gold:hover {
+    background: var(--gold-light);
+}
+
+.topbar {
+    background: var(--navy-deep);
+    color: #D8E1EB;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    font-size: .76rem;
+}
+
+.topbar-inner {
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.topbar-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.topbar-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.topbar-item strong {
+    color: var(--gold);
+}
+
+.topbar .icon {
+    width: 15px;
+    height: 15px;
+    color: var(--gold);
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(248,249,250,.98);
+    border-bottom: 1px solid transparent;
+    transition: background .3s ease, box-shadow .3s ease, border-color .3s ease, backdrop-filter .3s ease;
+}
+
+.header.scrolled {
+    background: rgba(248,249,250,.87);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-color: rgba(10,25,47,.08);
+    box-shadow: 0 10px 38px rgba(10,25,47,.09);
+}
+
+.navbar {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.brand {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-mark {
+    width: 46px;
+    height: 46px;
+    border: 1px solid rgba(212,175,55,.78);
+    border-radius: 7px;
+    display: grid;
+    place-items: center;
+    background: var(--navy);
+    color: var(--gold);
+    box-shadow: inset 0 0 0 4px rgba(212,175,55,.07);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.brand-text {
+    display: grid;
+    line-height: 1.05;
+}
+
+.brand-text strong {
+    color: var(--navy);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.16rem;
+}
+
+.brand-text small {
+    margin-top: 5px;
+    color: var(--slate);
+    font-size: .59rem;
+    font-weight: 700;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-links > a:not(.portal-btn) {
+    position: relative;
+    padding: 12px 10px;
+    color: #334155;
+    font-size: .88rem;
+    font-weight: 700;
+    transition: color .2s ease;
+}
+
+.nav-links > a:not(.portal-btn)::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 6px;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform .25s ease;
+}
+
+.nav-links > a:hover,
+.nav-links > a.active {
+    color: var(--crimson);
+}
+
+.nav-links > a:hover::after,
+.nav-links > a.active::after {
+    transform: scaleX(1);
+}
+
+.portal-btn {
+    min-height: 44px;
+    margin-left: 8px;
+    padding: 0 16px;
+    border-radius: 7px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--navy);
+    color: var(--white);
+    font-size: .84rem;
+    font-weight: 800;
+    transition: background .25s ease, transform .25s ease;
+}
+
+.portal-btn:hover {
+    background: var(--crimson);
+    transform: translateY(-1px);
+}
+
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 7px;
+    background: var(--navy);
+    color: var(--white);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    transition: transform .25s ease, opacity .25s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobile-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+    background: rgba(7,18,33,.56);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s ease;
+}
+
+.mobile-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.page-hero {
+    position: relative;
+    min-height: 510px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background:
+        linear-gradient(90deg, rgba(7,18,33,.99) 0%, rgba(10,25,47,.96) 55%, rgba(10,25,47,.85) 100%),
+        linear-gradient(135deg, var(--navy), var(--navy-soft));
+    color: var(--white);
+}
+
+.page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: linear-gradient(to right, rgba(0,0,0,.88), transparent 90%);
+}
+
+.page-hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 8%;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(transparent, rgba(212,175,55,.7), transparent);
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 950px;
+    padding: 92px 0 98px;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    color: #C9D5E3;
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeUp .7s ease .1s forwards;
+}
+
+.breadcrumb a {
+    color: var(--gold);
+}
+
+.hero-title {
+    max-width: 950px;
+    margin-top: 22px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(3rem, 6vw, 5.8rem);
+    line-height: 1;
+    letter-spacing: -.055em;
+    opacity: 0;
+    animation: fadeUp .8s ease .26s forwards;
+}
+
+.hero-title em {
+    font-style: normal;
+    color: var(--gold);
+}
+
+.hero-copy {
+    max-width: 760px;
+    margin-top: 23px;
+    color: #C9D4E2;
+    font-size: clamp(1rem, 2vw, 1.13rem);
+    opacity: 0;
+    animation: fadeUp .8s ease .42s forwards;
+}
+
+.hero-actions {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeUp .8s ease .58s forwards;
+}
+
+.hero-actions .btn-secondary {
+    background: rgba(255,255,255,.06);
+    color: var(--white);
+    border-color: rgba(255,255,255,.24);
+    box-shadow: none;
+}
+
+.hero-actions .btn-secondary:hover {
+    background: rgba(255,255,255,.1);
+    border-color: var(--gold);
+}
+
+.course-directory {
+    padding: 100px 0 110px;
+    background: var(--ivory);
+}
+
+.filter-shell {
+    margin-top: 42px;
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+}
+
+.search-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 14px;
+    align-items: center;
+}
+
+.search-box {
+    position: relative;
+}
+
+.search-box .icon {
+    position: absolute;
+    left: 17px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--slate);
+}
+
+.search-box input {
+    width: 100%;
+    min-height: 52px;
+    padding: 0 18px 0 49px;
+    border: 1px solid #D7DEE7;
+    border-radius: 8px;
+    outline: none;
+    background: #FCFDFE;
+    color: var(--charcoal);
+    transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.search-box input:focus {
+    background: var(--white);
+    border-color: var(--gold);
+    box-shadow: 0 0 0 4px rgba(212,175,55,.12);
+}
+
+.result-count {
+    min-width: 145px;
+    color: var(--slate);
+    font-size: .82rem;
+    font-weight: 700;
+    text-align: right;
+}
+
+.filter-pills {
+    margin-top: 17px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filter-pill {
+    min-height: 40px;
+    padding: 0 14px;
+    border: 1px solid #D6DEE7;
+    border-radius: 999px;
+    background: #FCFDFE;
+    color: #475569;
+    cursor: pointer;
+    font-size: .77rem;
+    font-weight: 800;
+    transition: background .22s ease, color .22s ease, border-color .22s ease, transform .22s ease;
+}
+
+.filter-pill:hover {
+    transform: translateY(-1px);
+    border-color: var(--gold);
+}
+
+.filter-pill.active {
+    background: var(--navy);
+    color: var(--white);
+    border-color: var(--navy);
+}
+
+.courses-grid {
+    margin-top: 34px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.course-card {
+    position: relative;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--white);
+    box-shadow: 0 10px 28px rgba(10,25,47,.055);
+    overflow: hidden;
+    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease, opacity .25s ease;
+}
+
+.course-card::before {
+    content: "";
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: var(--gold);
+    transition: width .35s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(212,175,55,.48);
+    box-shadow: var(--shadow-md);
+}
+
+.course-card:hover::before {
+    width: 100%;
+}
+
+.course-card.hidden {
+    display: none;
+}
+
+.course-header {
+    padding: 25px 25px 0;
+}
+
+.course-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.course-icon {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    border-radius: 9px;
+    display: grid;
+    place-items: center;
+    background: var(--navy);
+    color: var(--gold);
+    transition: background .25s ease, transform .25s ease;
+}
+
+.course-card:hover .course-icon {
+    background: var(--crimson);
+    transform: scale(1.05);
+}
+
+.cert-badge {
+    padding: 6px 9px;
+    border: 1px solid rgba(29,107,80,.15);
+    border-radius: 5px;
+    background: rgba(29,107,80,.07);
+    color: var(--success);
+    font-size: .63rem;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.course-category {
+    display: block;
+    margin-top: 21px;
+    color: var(--crimson);
+    font-size: .67rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.course-title {
+    margin-top: 6px;
+    color: var(--navy);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.55rem;
+    line-height: 1.18;
+}
+
+.course-desc {
+    margin-top: 10px;
+    color: var(--slate);
+    font-size: .88rem;
+}
+
+.course-meta {
+    margin-top: 21px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-block: 1px solid var(--border);
+}
+
+.meta-item {
+    padding: 12px 0;
+}
+
+.meta-item + .meta-item {
+    padding-left: 14px;
+    border-left: 1px solid var(--border);
+}
+
+.meta-item small {
+    display: block;
+    color: var(--muted);
+    font-size: .59rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.meta-item strong {
+    display: block;
+    margin-top: 2px;
+    color: var(--charcoal);
+    font-size: .79rem;
+}
+
+.topic-list {
+    margin-top: 19px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.topic-list span {
+    padding: 6px 8px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: var(--surface);
+    color: #475569;
+    font-size: .66rem;
+    font-weight: 700;
+}
+
+.course-accordion {
+    margin-top: 22px;
+    border-top: 1px solid var(--border);
+}
+
+.accordion-trigger {
+    width: 100%;
+    min-height: 50px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: transparent;
+    color: var(--navy);
+    cursor: pointer;
+    text-align: left;
+    font-size: .81rem;
+    font-weight: 800;
+}
+
+.accordion-trigger .chevron {
+    width: 31px;
+    height: 31px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--surface);
+    transition: transform .28s ease, background .28s ease, color .28s ease;
+}
+
+.accordion-trigger.open .chevron {
+    transform: rotate(180deg);
+    background: var(--navy);
+    color: var(--gold);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .38s ease;
+}
+
+.module-list {
+    padding: 3px 0 17px;
+    display: grid;
+    gap: 8px;
+    list-style: none;
+}
+
+.module-list li {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 9px;
+    align-items: start;
+    color: var(--slate);
+    font-size: .79rem;
+}
+
+.module-list li span {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--surface);
+    color: var(--navy);
+    font-size: .62rem;
+    font-weight: 800;
+}
+
+.course-actions {
+    margin-top: auto;
+    padding: 0 25px 25px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 9px;
+}
+
+.inquire-btn {
+    min-height: 45px;
+    border-radius: 7px;
+    background: var(--crimson);
+    color: var(--white);
+    cursor: pointer;
+    font-size: .8rem;
+    font-weight: 800;
+    transition: background .22s ease, transform .22s ease;
+}
+
+.inquire-btn:hover {
+    background: var(--crimson-dark);
+    transform: translateY(-1px);
+}
+
+.details-link {
+    width: 45px;
+    height: 45px;
+    border-radius: 7px;
+    display: grid;
+    place-items: center;
+    background: var(--surface);
+    color: var(--navy);
+    transition: background .22s ease, color .22s ease;
+}
+
+.details-link:hover {
+    background: var(--navy);
+    color: var(--gold);
+}
+
+.empty-state {
+    display: none;
+    margin-top: 28px;
+    padding: 40px;
+    border: 1px dashed #CAD4DF;
+    border-radius: var(--radius-md);
+    background: var(--white);
+    text-align: center;
+}
+
+.empty-state.show {
+    display: block;
+}
+
+.empty-state h3 {
+    color: var(--navy);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.5rem;
+}
+
+.empty-state p {
+    margin-top: 8px;
+    color: var(--slate);
+}
+
+.specialized {
+    padding: 105px 0;
+    background: var(--surface);
+    border-block: 1px solid var(--border);
+}
+
+.specialized-grid {
+    margin-top: 44px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.special-card {
+    position: relative;
+    min-height: 350px;
+    padding: 30px;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background: var(--white);
+    border: 1px solid var(--border);
+    transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+
+.special-card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 4px;
+    background: var(--gold);
+    transition: width .35s ease;
+}
+
+.special-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(212,175,55,.48);
+    box-shadow: var(--shadow-md);
+}
+
+.special-card:hover::after {
+    width: 100%;
+}
+
+.special-icon {
+    width: 57px;
+    height: 57px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    background: var(--navy);
+    color: var(--gold);
+}
+
+.special-card small {
+    display: block;
+    margin-top: 26px;
+    color: var(--crimson);
+    font-size: .67rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+}
+
+.special-card h3 {
+    margin-top: 7px;
+    color: var(--navy);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.65rem;
+    line-height: 1.2;
+}
+
+.special-card p {
+    margin-top: 12px;
+    color: var(--slate);
+    font-size: .88rem;
+}
+
+.special-features {
+    margin-top: 20px;
+    display: grid;
+    gap: 8px;
+    list-style: none;
+}
+
+.special-features li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #475569;
+    font-size: .78rem;
+    font-weight: 600;
+}
+
+.special-features .icon {
+    width: 15px;
+    height: 15px;
+    color: var(--gold);
+}
+
+.facilities {
+    padding: 105px 0;
+    background: var(--ivory);
+}
+
+.facilities-grid {
+    margin-top: 44px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    overflow: hidden;
+    border: 1px solid #DCE3EA;
+    border-radius: var(--radius-md);
+    background: #DCE3EA;
+}
+
+.facility {
+    position: relative;
+    min-height: 300px;
+    padding: 31px 26px;
+    background: var(--white);
+    transition: background .3s ease;
+}
+
+.facility::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: var(--gold);
+    transform: translateX(-50%);
+    transition: width .35s ease;
+}
+
+.facility:hover::before {
+    width: 100%;
+}
+
+.facility:hover {
+    background: #FCFDFE;
+}
+
+.facility-number {
+    color: #CBD5E1;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: .84rem;
+    font-weight: 800;
+}
+
+.facility-icon {
+    width: 54px;
+    height: 54px;
+    margin: 27px 0 23px;
+    border-radius: 9px;
+    display: grid;
+    place-items: center;
+    background: var(--navy);
+    color: var(--gold);
+    transition: transform .3s ease, background .3s ease;
+}
+
+.facility:hover .facility-icon {
+    transform: scale(1.08);
+    background: var(--crimson);
+}
+
+.facility h3 {
+    color: var(--navy);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.27rem;
+}
+
+.facility p {
+    margin-top: 9px;
+    color: var(--slate);
+    font-size: .84rem;
+}
+
+.process {
+    padding: 105px 0;
+    background: var(--white);
+}
+
+.process-track {
+    position: relative;
+    margin-top: 52px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.process-track::before {
+    content: "";
+    position: absolute;
+    top: 38px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: #DCE3EA;
+}
+
+.process-track::after {
+    content: "";
+    position: absolute;
+    top: 38px;
+    left: 10%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--crimson));
+    transition: width 1.4s cubic-bezier(.22,.72,.25,1);
+}
+
+.process-track.drawn::after {
+    width: 80%;
+}
+
+.process-step {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.process-node {
+    width: 78px;
+    height: 78px;
+    margin-inline: auto;
+    border: 7px solid var(--white);
+    outline: 1px solid #DCE3EA;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--surface);
+    color: var(--navy);
+    transition: background .35s ease, color .35s ease, transform .35s ease, outline-color .35s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.process-step.visible .process-node {
+    background: var(--navy);
+    color: var(--gold);
+    transform: scale(1.05);
+    outline-color: var(--gold);
+}
+
+.process-step small {
+    display: block;
+    margin-top: 22px;
+    color: var(--crimson);
+    font-size: .64rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.process-step h3 {
+    margin-top: 5px;
+    color: var(--navy);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.25rem;
+}
+
+.process-step p {
+    margin-top: 8px;
+    color: var(--slate);
+    font-size: .81rem;
+}
+
+.cta {
+    padding: 0 0 105px;
+    background: var(--white);
+}
+
+.cta-panel {
+    position: relative;
+    overflow: hidden;
+    padding: 59px;
+    border-radius: var(--radius-lg);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 42px;
+    align-items: center;
+    background: var(--crimson);
+    color: var(--white);
+    box-shadow: 0 26px 65px rgba(139,0,0,.2);
+}
+
+.cta-panel::before,
+.cta-panel::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 50%;
+}
+
+.cta-panel::before {
+    width: 380px;
+    height: 380px;
+    top: -190px;
+    right: -145px;
+}
+
+.cta-panel::after {
+    width: 245px;
+    height: 245px;
+    top: -120px;
+    right: -80px;
+}
+
+.cta-copy,
+.cta-action {
+    position: relative;
+    z-index: 2;
+}
+
+.cta-copy small {
+    display: block;
+    color: #F1DA9E;
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+}
+
+.cta-copy h2 {
+    max-width: 760px;
+    margin-top: 8px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2.15rem, 4vw, 3.65rem);
+    line-height: 1.1;
+}
+
+.cta-copy p {
+    max-width: 660px;
+    margin-top: 14px;
+    color: #F4DEDE;
+}
+
+.pulse-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid rgba(212,175,55,.7);
+    border-radius: inherit;
+    animation: pulseRing 2.2s ease-out infinite;
+}
+
+.footer {
+    padding-top: 70px;
+    background: var(--navy-deep);
+    color: #CBD5E1;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr .7fr .7fr 1fr;
+    gap: 52px;
+    padding-bottom: 55px;
+}
+
+.footer .brand-text strong {
+    color: var(--white);
+}
+
+.footer .brand-text small {
+    color: #94A3B8;
+}
+
+.footer-about {
+    max-width: 390px;
+    margin-top: 20px;
+    color: #94A3B8;
+    font-size: .86rem;
+}
+
+.footer-socials {
+    margin-top: 24px;
+    display: flex;
+    gap: 9px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 7px;
+    display: grid;
+    place-items: center;
+    color: #D9E2EC;
+    transition: background .25s ease, color .25s ease, border-color .25s ease, transform .25s ease;
+}
+
+.social-link:hover {
+    background: var(--gold);
+    color: var(--navy);
+    border-color: var(--gold);
+    transform: translateY(-2px);
+}
+
+.footer-title {
+    margin-bottom: 18px;
+    color: var(--white);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.12rem;
+}
+
+.footer-links {
+    display: grid;
+    gap: 10px;
+}
+
+.footer-links a {
+    width: fit-content;
+    color: #94A3B8;
+    font-size: .83rem;
+    transition: color .2s ease, transform .2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+    transform: translateX(3px);
+}
+
+.footer-contact {
+    display: grid;
+    gap: 15px;
+}
+
+.footer-contact-item {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 10px;
+    color: #94A3B8;
+    font-size: .82rem;
+}
+
+.footer-contact-item .icon {
+    width: 17px;
+    color: var(--gold);
+}
+
+.footer-bottom {
+    min-height: 72px;
+    border-top: 1px solid rgba(255,255,255,.09);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    color: #7F8DA0;
+    font-size: .75rem;
+}
+
+.footer-bottom-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-bottom-links a:hover {
+    color: var(--gold);
+}
+
+.inquiry-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    padding: 20px;
+    display: grid;
+    place-items: center;
+    background: rgba(7,18,33,.74);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .28s ease, visibility .28s ease;
+}
+
+.inquiry-modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-card {
+    position: relative;
+    width: min(100%, 650px);
+    max-height: 92vh;
+    overflow-y: auto;
+    border-radius: var(--radius-md);
+    background: var(--white);
+    box-shadow: 0 38px 100px rgba(0,0,0,.32);
+    transform: translateY(20px) scale(.98);
+    transition: transform .3s ease;
+}
+
+.inquiry-modal.open .modal-card {
+    transform: translateY(0) scale(1);
+}
+
+.modal-head {
+    position: relative;
+    padding: 32px 34px 24px;
+    background: var(--navy);
+    color: var(--white);
+    border-bottom: 3px solid var(--gold);
+}
+
+.modal-head small {
+    color: var(--gold);
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.modal-head h3 {
+    margin-top: 7px;
+    padding-right: 48px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 2rem;
+    line-height: 1.15;
+}
+
+.modal-head p {
+    margin-top: 8px;
+    color: #C9D5E3;
+    font-size: .86rem;
+}
+
+.modal-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    background: rgba(255,255,255,.09);
+    color: var(--white);
+    transition: background .2s ease, color .2s ease;
+}
+
+.modal-close:hover {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+.inquiry-form {
+    padding: 30px 34px 34px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.form-group {
+    display: grid;
+    gap: 7px;
+}
+
+.form-group.full {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    color: var(--navy);
+    font-size: .75rem;
+    font-weight: 800;
+}
+
+.form-control {
+    width: 100%;
+    min-height: 47px;
+    padding: 0 13px;
+    border: 1px solid #D6DEE7;
+    border-radius: 7px;
+    outline: none;
+    background: #FCFDFE;
+    color: var(--charcoal);
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+textarea.form-control {
+    min-height: 105px;
+    padding: 12px 13px;
+    resize: vertical;
+}
+
+.form-control:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 4px rgba(212,175,55,.12);
+}
+
+.form-submit {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.form-status {
+    display: none;
+    margin-top: 15px;
+    padding: 12px 14px;
+    border-radius: 7px;
+    background: rgba(29,107,80,.08);
+    color: var(--success);
+    font-size: .82rem;
+    font-weight: 700;
+}
+
+.form-status.show {
+    display: block;
+}
+
+.back-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 850;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--navy);
+    color: var(--white);
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: .25s ease;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--crimson);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .7s ease, transform .7s cubic-bezier(.22,.7,.24,1);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-38px);
+    transition: opacity .75s ease, transform .75s cubic-bezier(.22,.7,.24,1);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(38px);
+    transition: opacity .75s ease, transform .75s cubic-bezier(.22,.7,.24,1);
+}
+
+.scale-reveal {
+    opacity: 0;
+    transform: scale(.965);
+    transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible,
+.reveal-left.visible,
+.reveal-right.visible,
+.scale-reveal.visible {
+    opacity: 1;
+    transform: translate(0) scale(1);
+}
+
+.stagger > * {
+    transition-delay: calc(var(--i, 0) * 85ms);
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseRing {
+    0% {
+        transform: scale(1);
+        opacity: .65;
+    }
+    75%, 100% {
+        transform: scale(1.28);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 1120px) {
+    .courses-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .facilities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1.4fr .75fr .75fr;
+    }
+
+    .footer-col:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 980px) {
+    .topbar-inner {
+        justify-content: center;
+    }
+
+    .topbar-right {
+        display: none;
+    }
+
+    .nav-links {
+        position: fixed;
+        z-index: 1100;
+        top: 0;
+        right: 0;
+        width: min(84vw, 360px);
+        height: 100dvh;
+        padding: 104px 28px 35px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        background: var(--ivory);
+        box-shadow: -20px 0 55px rgba(10,25,47,.17);
+        transform: translateX(105%);
+        transition: transform .35s cubic-bezier(.22,.75,.2,1);
+    }
+
+    .nav-links.open {
+        transform: translateX(0);
+    }
+
+    .nav-links > a:not(.portal-btn) {
+        padding: 14px 4px;
+        border-bottom: 1px solid var(--border);
+        font-size: 1rem;
+    }
+
+    .nav-links > a:not(.portal-btn)::after {
+        display: none;
+    }
+
+    .portal-btn {
+        min-height: 50px;
+        margin: 18px 0 0;
+        justify-content: center;
+    }
+
+    .menu-toggle {
+        position: relative;
+        z-index: 1200;
+        display: flex;
+    }
+
+    .specialized-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .special-card {
+        min-height: auto;
+    }
+
+    .process-track {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 42px 22px;
+    }
+
+    .process-track::before,
+    .process-track::after {
+        display: none;
+    }
+
+    .cta-panel {
+        grid-template-columns: 1fr;
+        padding: 48px;
+    }
+}
+
+@media (max-width: 740px) {
+    .container {
+        width: min(calc(100% - 28px), var(--container));
+    }
+
+    .topbar {
+        font-size: .69rem;
+    }
+
+    .topbar-group {
+        justify-content: center;
+        gap: 11px;
+    }
+
+    .topbar-item:nth-child(2) {
+        display: none;
+    }
+
+    .navbar {
+        min-height: 70px;
+    }
+
+    .brand-mark {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-text strong {
+        font-size: 1rem;
+    }
+
+    .brand-text small {
+        font-size: .53rem;
+    }
+
+    .page-hero {
+        min-height: 465px;
+    }
+
+    .hero-inner {
+        padding: 72px 0 80px;
+    }
+
+    .hero-title {
+        font-size: clamp(2.8rem, 13vw, 4.5rem);
+    }
+
+    .course-directory,
+    .specialized,
+    .facilities,
+    .process {
+        padding: 78px 0;
+    }
+
+    .search-row {
+        grid-template-columns: 1fr;
+    }
+
+    .result-count {
+        min-width: 0;
+        text-align: left;
+    }
+
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .course-card {
+        max-width: 560px;
+        width: 100%;
+        margin-inline: auto;
+    }
+
+    .facilities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .facility {
+        min-height: auto;
+    }
+
+    .process-track {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .process-step {
+        display: grid;
+        grid-template-columns: 82px 1fr;
+        text-align: left;
+        column-gap: 16px;
+        align-items: start;
+    }
+
+    .process-node {
+        grid-row: 1 / 5;
+        width: 70px;
+        height: 70px;
+    }
+
+    .process-step small {
+        margin-top: 3px;
+    }
+
+    .cta {
+        padding-bottom: 78px;
+    }
+
+    .cta-panel {
+        padding: 36px 25px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 38px 24px;
+    }
+
+    .footer-col:first-child,
+    .footer-col:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        padding: 20px 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .filter-shell {
+        padding: 16px;
+    }
+
+    .filter-pills {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .filter-pill {
+        width: 100%;
+        border-radius: 7px;
+    }
+
+    .course-header {
+        padding: 22px 20px 0;
+    }
+
+    .course-actions {
+        padding: 0 20px 22px;
+    }
+
+    .course-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .meta-item + .meta-item {
+        padding-left: 0;
+        border-left: 0;
+        border-top: 1px solid var(--border);
+    }
+
+    .modal-head,
+    .inquiry-form {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .modal-head h3 {
+        font-size: 1.65rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-col,
+    .footer-col:first-child,
+    .footer-col:last-child {
+        grid-column: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+    <div class="container topbar-inner">
+        <div class="topbar-group">
+            <span class="topbar-item">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>
+                Admissions Helpline: <strong>+91 98765 43210</strong>
+            </span>
+            <span class="topbar-item">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+                admissions@devxinstitute.in
+            </span>
+        </div>
+
+        <div class="topbar-group topbar-right">
+            <span class="topbar-item">
+                <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                Mon–Sat, 8:00 AM–7:00 PM
+            </span>
+            <span class="topbar-item"><strong>Admissions Open 2026</strong></span>
+        </div>
+    </div>
+</div>
+
+<header class="header" id="header">
+    <div class="container navbar">
+        <a href="index.html" class="brand" aria-label="DevX Computer Institute home">
+            <span class="brand-mark">DX</span>
+            <span class="brand-text">
+                <strong>DevX</strong>
+                <small>Computer Institute</small>
+            </span>
+        </a>
+
+        <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="design.html">Design</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html" class="portal-btn">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/></svg>
+                Student Portal
+            </a>
+        </nav>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<main>
+
+<section class="page-hero">
+    <div class="container hero-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>Our Services</span>
+        </nav>
+
+        <h1 class="hero-title">Professional Training & <em>Academic Services</em></h1>
+
+        <p class="hero-copy">
+            Build practical technology skills through structured academic programs, supervised labs, specialist mentorship, career preparation, certifications, internships and industry-aligned training at DevX Computer Institute.
+        </p>
+
+        <div class="hero-actions">
+            <a href="#courses" class="btn btn-primary">
+                Browse Courses
+                <svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+            </a>
+            <button class="btn btn-secondary hero-inquire" type="button">
+                Speak to a Counselor
+                <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="course-directory" id="courses">
+    <div class="container">
+        <div class="reveal">
+            <div class="eyebrow">Course Directory</div>
+            <h2 class="section-title">Find the Right Technical Program for Your Next Goal</h2>
+            <p class="section-copy">Search by topic or narrow the directory by discipline. Every DevX program combines guided theory, practical work, assessments and career-oriented project development.</p>
+        </div>
+
+        <div class="filter-shell scale-reveal">
+            <div class="search-row">
+                <div class="search-box">
+                    <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+                    <input type="search" id="courseSearch" placeholder="Search courses, skills or technologies..." aria-label="Search courses">
+                </div>
+                <div class="result-count" id="resultCount">8 programs available</div>
+            </div>
+
+            <div class="filter-pills" role="group" aria-label="Course categories">
+                <button class="filter-pill active" data-filter="all">All Programs</button>
+                <button class="filter-pill" data-filter="software">Software Development</button>
+                <button class="filter-pill" data-filter="data">Data Science</button>
+                <button class="filter-pill" data-filter="cyber">Cyber Security</button>
+                <button class="filter-pill" data-filter="design">Design & Multimedia</button>
+                <button class="filter-pill" data-filter="basic">Basic Computer Skills</button>
+            </div>
+        </div>
+
+        <div class="courses-grid stagger" id="coursesGrid">
+
+            <article class="course-card reveal" style="--i:0" data-category="software" data-search="full stack web development html css javascript frontend backend node databases responsive websites software programming">
+                <div class="course-header">
+                    <div class="course-top">
+                        <div class="course-icon">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="m8 9-4 3 4 3"/><path d="m16 9 4 3-4 3"/><path d="m14 5-4 14"/></svg>
+                        </div>
+                        <span class="cert-badge">Certificate Included</span>
+                    </div>
+
+                    <span class="course-category">Software Development</span>
+                    <h3 class="course-title">Full Stack Web Development</h3>
+                    <p class="course-desc">Develop professional websites and full-stack applications through structured front-end, server-side, database and deployment training.</p>
+
+                    <div class="course-meta">
+                        <div class="meta-item"><small>Duration</small><strong>9 Months</strong></div>
+                        <div class="meta-item"><small>Skill Level</small><strong>Beginner–Advanced</strong></div>
+                    </div>
+
+                    <div class="topic-list">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Node.js</span>
+                        <span>SQL</span>
+                    </div>
+
+                    <div class="course-accordion">
+                        <button class="accordion-trigger" type="button" aria-expanded="false">
+                            Detailed Syllabus
+                            <span class="chevron"><svg class="icon" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+                        </button>
+                        <div class="accordion-content">
+                            <ul class="module-list">
+                                <li><span>1</span>HTML structure, semantic standards and responsive CSS foundations</li>
+                                <li><span>2</span>JavaScript programming, DOM interaction and application logic</li>
+                                <li><span>3</span>Server-side development, APIs, authentication and databases</li>
+                                <li><span>4</span>Deployment workflows and capstone application development</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-actions">
+                    <button class="inquire-btn" type="button" data-course="Full Stack Web Development">Enroll / Inquire Now</button>
+                    <a href="contact.html" class="details-link" aria-label="Contact about Full Stack Web Development">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card reveal" style="--i:1" data-category="software" data-search="java professional programming object oriented oop software applications database desktop development coding">
+                <div class="course-header">
+                    <div class="course-top">
+                        <div class="course-icon">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M8 18h8"/><path d="M9 22h6"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg>
+                        </div>
+                        <span class="cert-badge">Certificate Included</span>
+                    </div>
+
+                    <span class="course-category">Software Development</span>
+                    <h3 class="course-title">Java Programming Professional</h3>
+                    <p class="course-desc">Build strong object-oriented programming foundations with practical Java exercises, database integration and application development.</p>
+
+                    <div class="course-meta">
+                        <div class="meta-item"><small>Duration</small><strong>5 Months</strong></div>
+                        <div class="meta-item"><small>Skill Level</small><strong>Intermediate</strong></div>
+                    </div>
+
+                    <div class="topic-list">
+                        <span>Java</span>
+                        <span>OOP</span>
+                        <span>JDBC</span>
+                        <span>SQL</span>
+                        <span>Projects</span>
+                    </div>
+
+                    <div class="course-accordion">
+                        <button class="accordion-trigger" type="button" aria-expanded="false">
+                            Detailed Syllabus
+                            <span class="chevron"><svg class="icon" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+                        </button>
+                        <div class="accordion-content">
+                            <ul class="module-list">
+                                <li><span>1</span>Programming logic, syntax and control structures</li>
+                                <li><span>2</span>Object-oriented design, classes, inheritance and interfaces</li>
+                                <li><span>3</span>Collections, exception handling and database integration</li>
+                                <li><span>4</span>Application project and code review preparation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-actions">
+                    <button class="inquire-btn" type="button" data-course="Java Programming Professional">Enroll / Inquire Now</button>
+                    <a href="contact.html" class="details-link" aria-label="Contact about Java Programming">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card reveal" style="--i:2" data-category="data" data-search="python data science analytics visualization pandas numpy statistics dashboards machine learning business analysis">
+                <div class="course-header">
+                    <div class="course-top">
+                        <div class="course-icon">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M4 19V9"/><path d="M10 19V5"/><path d="M16 19v-7"/><path d="M22 19V3"/></svg>
+                        </div>
+                        <span class="cert-badge">Certificate Included</span>
+                    </div>
+
+                    <span class="course-category">Data Science</span>
+                    <h3 class="course-title">Python & Data Analytics</h3>
+                    <p class="course-desc">Learn Python programming, practical data preparation, analysis, visualization and business-focused reporting techniques.</p>
+
+                    <div class="course-meta">
+                        <div class="meta-item"><small>Duration</small><strong>6 Months</strong></div>
+                        <div class="meta-item"><small>Skill Level</small><strong>Intermediate</strong></div>
+                    </div>
+
+                    <div class="topic-list">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>NumPy</span>
+                        <span>Statistics</span>
+                        <span>Visualization</span>
+                    </div>
+
+                    <div class="course-accordion">
+                        <button class="accordion-trigger" type="button" aria-expanded="false">
+                            Detailed Syllabus
+                            <span class="chevron"><svg class="icon" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+                        </button>
+                        <div class="accordion-content">
+                            <ul class="module-list">
+                                <li><span>1</span>Python fundamentals and programming workflows</li>
+                                <li><span>2</span>Data cleaning, transformation and exploratory analysis</li>
+                                <li><span>3</span>Visualization, descriptive statistics and reporting</li>
+                                <li><span>4</span>Business analytics capstone project</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-actions">
+                    <button class="inquire-btn" type="button" data-course="Python & Data Analytics">Enroll / Inquire Now</button>
+                    <a href="contact.html" class="details-link" aria-label="Contact about Python and Data Analytics">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card reveal" style="--i:3" data-category="data" data-search="sql database management relational database mysql querying reports schema data business intelligence">
+                <div class="course-header">
+                    <div class="course-top">
+                        <div class="course-icon">
+                            <svg class="icon" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>
+                        </div>
+                        <span class="cert-badge">Certificate Included</span>
+                    </div>
+
+                    <span class="course-category">Data Science</span>
+                    <h3 class="course-title">SQL & Database Management</h3>
+                    <p class="course-desc">Master relational databases, professional SQL querying, schema design, reporting and practical data management workflows.</p>
+
+                    <div class="course-meta">
+                        <div class="meta-item"><small>Duration</small><strong>3 Months</strong></div>
+                        <div class="meta-item"><small>Skill Level</small><strong>Intermediate</strong></div>
+                    </div>
+
+                    <div class="topic-list">
+                        <span>SQL</span>
+                        <span>MySQL</span>
+                        <span>Joins</span>
+                        <span>Schema Design</span>
+                        <span>Reports</span>
+                    </div>
+
+                    <div class="course-accordion">
+                        <button class="accordion-trigger" type="button" aria-expanded="false">
+                            Detailed Syllabus
+                            <span class="chevron"><svg class="icon" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+                        </button>
+                        <div class="accordion-content">
+                            <ul class="module-list">
+                                <li><span>1</span>Relational database architecture and table design</li>
+                                <li><span>2</span>SQL queries, filtering, joins and aggregate functions</li>
+                                <li><span>3</span>Views, subqueries, normalization and reporting</li>
+                                <li><span>4</span>Database project and performance fundamentals</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-actions">
+                    <button class="inquire-btn" type="button" data-course="SQL & Database Management">Enroll / Inquire Now</button>
+                    <a href="contact.html" class="details-link" aria-label="Contact about SQL and Database Management">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card reveal" style="--i:4" data-category="cyber" data-search="cyber security ethical hacking network security linux information security vulnerability penetration testing">
+                <div class="course-header">
+                    <div class="course-top">
+                        <div class="course-icon">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-3 8-10V5l-8-3-8 3v7c0 7 8 10 8 10z"/><path d="m9 12 2 2 4-5"/></svg>
+                        </div>
+                        <span class="cert-badge">Certificate Included</span>
+                    </div>
+
+                    <span class="course-category">Cyber Security</span>
+                    <h3 class="course-title">Cyber Security Foundations</h3>
+                    <p class="course-desc">Develop responsible security knowledge across networks, systems, operating environments, risk assessment and defensive practices.</p>
+
+                    <div class="course-meta">
+                        <div class="meta-item"><small>Duration</small><strong>5 Months</strong></div>
+                        <div class="meta-item"><small>Skill Level</small><strong>Intermediate</strong></div>
+                    </div>
+
+                    <div class="topic-list">
+                        <span>Networking</span>
+                        <span>Linux</span>
+                        <span>Security</span>
+                        <span>Risk</span>
+                        <span>Defense</span>
+                    </div>
+
+                    <div class="course-accordion">
+                        <button class="accordion-trigger" type="button" aria-expanded="false">
+                            Detailed Syllabus
+                            <span class="chevron"><svg class="icon" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+                        </button>
+                        <div class="accordion-content">
+                            <ul class="module-list">
+                                <li><span>1</span>Network, operating system and security fundamentals</li>
+                                <li><span>2</span>Threat awareness, access control and defensive principles</li>
+                                <li><span>3</span>Security assessment methodology and responsible lab exercises</li>
+                                <li><span>4</span>Incident response fundamentals and security documentation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-actions">
+                    <button class="inquire-btn" type="button" data-course="Cyber Security Foundations">Enroll / Inquire Now</button>
+                    <a href="contact.html" class="details-link" aria-label="Contact about Cyber Security">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card reveal" style="--i:5" data-category="design" data-search="ui ux graphic design multimedia photoshop illustrator figma interface visual branding portfolio design">
+                <div class="course-header">
+                    <div class="course-top">
+                        <div class="course-icon">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
+                        </div>
+                        <span class="cert-badge">Certificate Included</span>
+                    </div>
+
+                    <span class="course-category">Design & Multimedia</span>
+                    <h3 class="course-title">UI/UX & Graphic Design</h3>
+                    <p class="course-desc">Study interface design, visual communication, typography, layout systems, branding and professional portfolio development.</p>
+
+                    <div class="course-meta">
+                        <div class="meta-item"><small>Duration</small><strong>6 Months</strong></div>
+                        <div class="meta-item"><small>Skill Level</small><strong>Beginner–Advanced</strong></div>
+                    </div>
+
+                    <div class="topic-list">
+                        <span>Figma</span>
+                        <span>UI/UX</span>
+                        <span>Typography</span>
+                        <span>Branding</span>
+                        <span>Portfolio</span>
+                    </div>
+
+                    <div class="course-accordion">
+                        <button class="accordion-trigger" type="button" aria-expanded="false">
+                            Detailed Syllabus
+                            <span class="chevron"><svg class="icon" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+                        </button>
+                        <div class="accordion-content">
+                            <ul class="module-list">
+                                <li><span>1</span>Visual hierarchy, typography and composition fundamentals</li>
+                                <li><span>2</span>User research, wireframing and interface design workflows</li>
+                                <li><span>3</span>Brand communication and digital graphic production</li>
+                                <li><span>4</span>Professional case study and portfolio presentation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-actions">
+                    <button class="inquire-btn" type="button" data-course="UI/UX & Graphic Design">Enroll / Inquire Now</button>
+                    <a href="design.html" class="details-link" aria-label="Explore design courses">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card reveal" style="--i:6" data-category="design" data-search="video editing motion graphics multimedia premiere animation editing creative media design">
+                <div class="course-header">
+                    <div class="course-top">
+                        <div class="course-icon">
+                            <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="5" width="14" height="14" rx="2"/><path d="m17 10 4-2v8l-4-2z"/><path d="m8 9 4 3-4 3z"/></svg>
+                        </div>
+                        <span class="cert-badge">Certificate Included</span>
+                    </div>
+
+                    <span class="course-category">Design & Multimedia</span>
+                    <h3 class="course-title">Video Editing & Motion Media</h3>
+                    <p class="course-desc">Build practical editing, storytelling, motion and multimedia production skills for digital content and professional media workflows.</p>
+
+                    <div class="course-meta">
+                        <div class="meta-item"><small>Duration</small><strong>4 Months</strong></div>
+                        <div class="meta-item"><small>Skill Level</small><strong>Beginner–Intermediate</strong></div>
+                    </div>
+
+                    <div class="topic-list">
+                        <span>Editing</span>
+                        <span>Motion</span>
+                        <span>Audio</span>
+                        <span>Storytelling</span>
+                        <span>Portfolio</span>
+                    </div>
+
+                    <div class="course-accordion">
+                        <button class="accordion-trigger" type="button" aria-expanded="false">
+                            Detailed Syllabus
+                            <span class="chevron"><svg class="icon" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+                        </button>
+                        <div class="accordion-content">
+                            <ul class="module-list">
+                                <li><span>1</span>Editing workflow, timeline control and media organization</li>
+                                <li><span>2</span>Audio, transitions, color and visual continuity</li>
+                                <li><span>3</span>Motion graphics and digital publishing principles</li>
+                                <li><span>4</span>Showreel production and portfolio preparation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-actions">
+                    <button class="inquire-btn" type="button" data-course="Video Editing & Motion Media">Enroll / Inquire Now</button>
+                    <a href="design.html" class="details-link" aria-label="Explore multimedia design">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card reveal" style="--i:7" data-category="basic" data-search="basic computer skills office ms office word excel powerpoint internet typing digital literacy fundamentals">
+                <div class="course-header">
+                    <div class="course-top">
+                        <div class="course-icon">
+                            <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+                        </div>
+                        <span class="cert-badge">Certificate Included</span>
+                    </div>
+
+                    <span class="course-category">Basic Computer Skills</span>
+                    <h3 class="course-title">Advanced Computer Applications</h3>
+                    <p class="course-desc">Gain confident workplace computer skills covering documents, spreadsheets, presentations, internet tools and digital productivity.</p>
+
+                    <div class="course-meta">
+                        <div class="meta-item"><small>Duration</small><strong>4 Months</strong></div>
+                        <div class="meta-item"><small>Skill Level</small><strong>Foundation</strong></div>
+                    </div>
+
+                    <div class="topic-list">
+                        <span>Word</span>
+                        <span>Excel</span>
+                        <span>PowerPoint</span>
+                        <span>Internet</span>
+                        <span>Productivity</span>
+                    </div>
+
+                    <div class="course-accordion">
+                        <button class="accordion-trigger" type="button" aria-expanded="false">
+                            Detailed Syllabus
+                            <span class="chevron"><svg class="icon" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+                        </button>
+                        <div class="accordion-content">
+                            <ul class="module-list">
+                                <li><span>1</span>Computer fundamentals, operating systems and file management</li>
+                                <li><span>2</span>Professional documents, formatting and productivity workflows</li>
+                                <li><span>3</span>Spreadsheet formulas, charts and structured data handling</li>
+                                <li><span>4</span>Presentations, internet tools and workplace digital practice</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-actions">
+                    <button class="inquire-btn" type="button" data-course="Advanced Computer Applications">Enroll / Inquire Now</button>
+                    <a href="contact.html" class="details-link" aria-label="Contact about computer applications">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                    </a>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="empty-state" id="emptyState">
+            <h3>No matching programs found</h3>
+            <p>Try a broader keyword or select another course category.</p>
+        </div>
+    </div>
+</section>
+
+<section class="specialized">
+    <div class="container">
+        <div class="reveal">
+            <div class="eyebrow">Specialized Training</div>
+            <h2 class="section-title">Programs Designed for Professional and Industry Outcomes</h2>
+            <p class="section-copy">Beyond standard classroom courses, DevX offers structured training for organizations, students seeking real-world exposure and learners preparing for career transitions.</p>
+        </div>
+
+        <div class="specialized-grid stagger">
+            <article class="special-card reveal" style="--i:0">
+                <div class="special-icon">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 10h6"/><path d="M9 14h6"/></svg>
+                </div>
+                <small>Organizations & Teams</small>
+                <h3>Corporate Training</h3>
+                <p>Custom technical upskilling programs for businesses seeking structured staff development in software, productivity, data and digital tools.</p>
+                <ul class="special-features">
+                    <li><svg class="icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> Customized training curriculum</li>
+                    <li><svg class="icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> Group assessments and progress reporting</li>
+                    <li><svg class="icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> On-campus or structured remote delivery</li>
+                </ul>
+            </article>
+
+            <article class="special-card reveal" style="--i:1">
+                <div class="special-icon">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 8h8"/><path d="M8 12h5"/><path d="M8 16h7"/></svg>
+                </div>
+                <small>Students & Graduates</small>
+                <h3>Industrial Internship Programs</h3>
+                <p>Project-oriented internship tracks designed to expose learners to structured technical briefs, documentation, deadlines and portfolio-ready output.</p>
+                <ul class="special-features">
+                    <li><svg class="icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> Guided industry-style project assignments</li>
+                    <li><svg class="icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> Mentor review and technical documentation</li>
+                    <li><svg class="icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> Internship completion certification</li>
+                </ul>
+            </article>
+
+            <article class="special-card reveal" style="--i:2">
+                <div class="special-icon">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 19h16"/><path d="m7 15 4-4 3 2 5-6"/></svg>
+                </div>
+                <small>Career Acceleration</small>
+                <h3>Placement Guarantee Tracks</h3>
+                <p>Intensive eligibility-based pathways combining technical training, portfolio work, aptitude preparation, interviews and structured placement support.</p>
+                <ul class="special-features">
+                    <li><svg class="icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> Technical and aptitude preparation</li>
+                    <li><svg class="icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> Resume, portfolio and mock interview reviews</li>
+                    <li><svg class="icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> Employer referral support for eligible graduates</li>
+                </ul>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="facilities">
+    <div class="container">
+        <div class="reveal">
+            <div class="eyebrow">Infrastructure & Student Services</div>
+            <h2 class="section-title">A Practical Learning Environment Built Around Student Progress</h2>
+            <p class="section-copy">DevX students receive access to structured practice environments and academic support services designed to strengthen confidence outside regular classroom instruction.</p>
+        </div>
+
+        <div class="facilities-grid stagger">
+            <article class="facility reveal" style="--i:0">
+                <span class="facility-number">01</span>
+                <div class="facility-icon">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M17.5 19H7a5 5 0 1 1 1.8-9.7A6 6 0 0 1 20 12a3.5 3.5 0 0 1-2.5 7z"/><path d="M12 12v7"/><path d="m9 15 3-3 3 3"/></svg>
+                </div>
+                <h3>24/7 Cloud Labs</h3>
+                <p>Selected programs include cloud-based development environments that support additional exercises and project work beyond campus lab hours.</p>
+            </article>
+
+            <article class="facility reveal" style="--i:1">
+                <span class="facility-number">02</span>
+                <div class="facility-icon">
+                    <svg class="icon" viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2.5 21a6.5 6.5 0 0 1 13 0"/><path d="M17 8h5"/><path d="M19.5 5.5v5"/></svg>
+                </div>
+                <h3>1-on-1 Mentorship</h3>
+                <p>Individual review sessions help students resolve technical gaps, improve projects and make more deliberate progress through challenging modules.</p>
+            </article>
+
+            <article class="facility reveal" style="--i:2">
+                <span class="facility-number">03</span>
+                <div class="facility-icon">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v12H4z"/><path d="M8 20h8"/><path d="M12 16v4"/><circle cx="9" cy="10" r="2"/><path d="M13 8h4"/><path d="M13 12h4"/></svg>
+                </div>
+                <h3>Mock Interview Prep</h3>
+                <p>Practice interview sessions address technical explanation, project presentation, confidence, professional communication and common hiring questions.</p>
+            </article>
+
+            <article class="facility reveal" style="--i:3">
+                <span class="facility-number">04</span>
+                <div class="facility-icon">
+                    <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M8.5 12 7 22l5-3 5 3-1.5-10"/></svg>
+                </div>
+                <h3>Certification Assistance</h3>
+                <p>Faculty guidance supports course completion documentation, certification preparation and selected external certification pathways where applicable.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="process">
+    <div class="container">
+        <div class="reveal">
+            <div class="eyebrow">Enrollment Journey</div>
+            <h2 class="section-title">A Clear Path from Course Selection to Career Readiness</h2>
+            <p class="section-copy">The DevX enrollment process is designed to help students choose appropriately, train consistently and complete their program with practical evidence of skill.</p>
+        </div>
+
+        <div class="process-track" id="processTrack">
+            <article class="process-step reveal" style="--i:0">
+                <div class="process-node">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M8 9h8"/><path d="M8 13h5"/></svg>
+                </div>
+                <small>Step 01</small>
+                <h3>Course Selection</h3>
+                <p>Review available pathways and shortlist the program that best fits your skills, schedule and career objective.</p>
+            </article>
+
+            <article class="process-step reveal" style="--i:1">
+                <div class="process-node">
+                    <svg class="icon" viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2.5 21a6.5 6.5 0 0 1 13 0"/><path d="M17 7h5"/><path d="M17 11h4"/></svg>
+                </div>
+                <small>Step 02</small>
+                <h3>Counseling</h3>
+                <p>Discuss prerequisites, duration, batch options, learning expectations and your intended professional direction.</p>
+            </article>
+
+            <article class="process-step reveal" style="--i:2">
+                <div class="process-node">
+                    <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="m8 10 2 2 5-5"/></svg>
+                </div>
+                <small>Step 03</small>
+                <h3>Practical Training</h3>
+                <p>Complete guided modules, laboratory exercises, projects and continuous assessments with faculty support.</p>
+            </article>
+
+            <article class="process-step reveal" style="--i:3">
+                <div class="process-node">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 19h16"/><path d="m7 15 4-4 3 2 5-6"/></svg>
+                </div>
+                <small>Step 04</small>
+                <h3>Certification & Placement</h3>
+                <p>Complete final assessments, receive certification and access eligible career preparation and placement support.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="container">
+        <div class="cta-panel scale-reveal">
+            <div class="cta-copy">
+                <small>Admissions Open</small>
+                <h2>Choose Your Program. Build the Skill. Prepare for the Opportunity.</h2>
+                <p>Start with a course inquiry and our academic team will help you understand the syllabus, batch schedule, fees, prerequisites and available career support.</p>
+            </div>
+
+            <div class="cta-action">
+                <button class="btn btn-gold pulse-btn cta-inquire" type="button">
+                    Start Course Inquiry
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="brand">
+                    <span class="brand-mark">DX</span>
+                    <span class="brand-text">
+                        <strong>DevX</strong>
+                        <small>Computer Institute</small>
+                    </span>
+                </a>
+
+                <p class="footer-about">Professional computer education focused on practical skill, academic discipline, technical confidence and career readiness.</p>
+
+                <div class="footer-socials">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v2"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="YouTube">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M22 12s0-4-1-6c-.5-1-1.5-1.5-2.5-1.7C16.5 4 12 4 12 4s-4.5 0-6.5.3C4.5 4.5 3.5 5 3 6c-1 2-1 6-1 6s0 4 1 6c.5 1 1.5 1.5 2.5 1.7C7.5 20 12 20s4.5 0 6.5-.3c1-.2 2-.7 2.5-1.7 1-2 1-6 1-6z"/><path d="m10 9 5 3-5 3z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Institute</h3>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Courses</a>
+                    <a href="design.html">Design Programs</a>
+                    <a href="contact.html">Admissions</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Student Links</h3>
+                <div class="footer-links">
+                    <a href="login.html">Student Portal</a>
+                    <a href="services.html">Course Syllabus</a>
+                    <a href="contact.html">Academic Counseling</a>
+                    <a href="contact.html">Student Support</a>
+                    <a href="contact.html">Certificate Query</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Visit DevX</h3>
+                <div class="footer-contact">
+                    <div class="footer-contact-item">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                        <span>DevX Academic Centre, Main Market Road, New Delhi, India</span>
+                    </div>
+
+                    <div class="footer-contact-item">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/></svg>
+                        <span>+91 98765 43210</span>
+                    </div>
+
+                    <div class="footer-contact-item">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+                        <span>admissions@devxinstitute.in</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© <span id="currentYear"></span> DevX Computer Institute. All rights reserved.</span>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="inquiry-modal" id="inquiryModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="inquiryTitle">
+        <div class="modal-head">
+            <small>Course Enrollment Inquiry</small>
+            <h3 id="inquiryTitle">Speak with DevX Admissions</h3>
+            <p>Submit your details and course interest to prepare your academic counseling request.</p>
+
+            <button class="modal-close" id="modalClose" type="button" aria-label="Close inquiry form">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+        </div>
+
+        <form class="inquiry-form" id="inquiryForm">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="studentName">Full Name</label>
+                    <input class="form-control" type="text" id="studentName" name="studentName" autocomplete="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="studentPhone">Phone Number</label>
+                    <input class="form-control" type="tel" id="studentPhone" name="studentPhone" autocomplete="tel" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="studentEmail">Email Address</label>
+                    <input class="form-control" type="email" id="studentEmail" name="studentEmail" autocomplete="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="preferredBatch">Preferred Batch</label>
+                    <select class="form-control" id="preferredBatch" name="preferredBatch">
+                        <option value="">Select batch</option>
+                        <option>Morning</option>
+                        <option>Afternoon</option>
+                        <option>Evening</option>
+                        <option>Weekend</option>
+                    </select>
+                </div>
+
+                <div class="form-group full">
+                    <label for="selectedCourse">Course of Interest</label>
+                    <select class="form-control" id="selectedCourse" name="selectedCourse" required>
+                        <option value="">Select a course</option>
+                        <option>Full Stack Web Development</option>
+                        <option>Java Programming Professional</option>
+                        <option>Python & Data Analytics</option>
+                        <option>SQL & Database Management</option>
+                        <option>Cyber Security Foundations</option>
+                        <option>UI/UX & Graphic Design</option>
+                        <option>Video Editing & Motion Media</option>
+                        <option>Advanced Computer Applications</option>
+                        <option>General Course Counseling</option>
+                    </select>
+                </div>
+
+                <div class="form-group full">
+                    <label for="studentMessage">Your Goal or Question</label>
+                    <textarea class="form-control" id="studentMessage" name="studentMessage" placeholder="Tell us what you want to learn or what career path you are considering."></textarea>
+                </div>
+            </div>
+
+            <button class="btn btn-primary form-submit" type="submit">
+                Submit Inquiry
+                <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+            </button>
+
+            <div class="form-status" id="formStatus">Your inquiry has been prepared successfully. DevX admissions can now follow up with your selected course details.</div>
+        </form>
+    </div>
+</div>
+
+<button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+    <svg class="icon" viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"/></svg>
+</button>
+
+<script>
+const header = document.getElementById("header")
+const menuToggle = document.getElementById("menuToggle")
+const navLinks = document.getElementById("navLinks")
+const mobileOverlay = document.getElementById("mobileOverlay")
+const backToTop = document.getElementById("backToTop")
+const courseSearch = document.getElementById("courseSearch")
+const filterPills = document.querySelectorAll(".filter-pill")
+const courseCards = document.querySelectorAll(".course-card")
+const resultCount = document.getElementById("resultCount")
+const emptyState = document.getElementById("emptyState")
+const inquiryModal = document.getElementById("inquiryModal")
+const modalClose = document.getElementById("modalClose")
+const inquiryForm = document.getElementById("inquiryForm")
+const selectedCourse = document.getElementById("selectedCourse")
+const formStatus = document.getElementById("formStatus")
+const processTrack = document.getElementById("processTrack")
+let activeFilter = "all"
+let previousFocus = null
+
+const updateScrollState = () => {
+    header.classList.toggle("scrolled", window.scrollY > 24)
+    backToTop.classList.toggle("show", window.scrollY > 650)
+}
+
+window.addEventListener("scroll", updateScrollState, { passive: true })
+updateScrollState()
+
+const setMenu = open => {
+    menuToggle.classList.toggle("active", open)
+    navLinks.classList.toggle("open", open)
+    mobileOverlay.classList.toggle("active", open)
+    document.body.classList.toggle("menu-open", open)
+    menuToggle.setAttribute("aria-expanded", String(open))
+}
+
+menuToggle.addEventListener("click", () => {
+    setMenu(!navLinks.classList.contains("open"))
+})
+
+mobileOverlay.addEventListener("click", () => {
+    setMenu(false)
+})
+
+navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => setMenu(false))
+})
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 980) setMenu(false)
+})
+
+backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+})
+
+const revealElements = document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .scale-reveal")
+
+const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible")
+            revealObserver.unobserve(entry.target)
+        }
+    })
+}, {
+    threshold: .12,
+    rootMargin: "0px 0px -35px 0px"
+})
+
+revealElements.forEach(element => revealObserver.observe(element))
+
+const filterCourses = () => {
+    const query = courseSearch.value.trim().toLowerCase()
+    let visibleCount = 0
+
+    courseCards.forEach(card => {
+        const matchesCategory = activeFilter === "all" || card.dataset.category === activeFilter
+        const searchableText = `${card.dataset.search} ${card.textContent}`.toLowerCase()
+        const matchesSearch = !query || searchableText.includes(query)
+        const shouldShow = matchesCategory && matchesSearch
+
+        card.classList.toggle("hidden", !shouldShow)
+
+        if (shouldShow) visibleCount += 1
+    })
+
+    resultCount.textContent = `${visibleCount} ${visibleCount === 1 ? "program" : "programs"} available`
+    emptyState.classList.toggle("show", visibleCount === 0)
+}
+
+courseSearch.addEventListener("input", filterCourses)
+
+filterPills.forEach(pill => {
+    pill.addEventListener("click", () => {
+        activeFilter = pill.dataset.filter
+
+        filterPills.forEach(item => item.classList.remove("active"))
+        pill.classList.add("active")
+        filterCourses()
+    })
+})
+
+document.querySelectorAll(".accordion-trigger").forEach(trigger => {
+    trigger.addEventListener("click", () => {
+        const content = trigger.nextElementSibling
+        const isOpen = trigger.classList.contains("open")
+
+        trigger.classList.toggle("open", !isOpen)
+        trigger.setAttribute("aria-expanded", String(!isOpen))
+
+        if (isOpen) {
+            content.style.maxHeight = null
+        } else {
+            content.style.maxHeight = `${content.scrollHeight}px`
+        }
+    })
+})
+
+const openInquiryModal = courseName => {
+    previousFocus = document.activeElement
+
+    if (courseName && Array.from(selectedCourse.options).some(option => option.value === courseName)) {
+        selectedCourse.value = courseName
+    } else if (!selectedCourse.value) {
+        selectedCourse.value = "General Course Counseling"
+    }
+
+    formStatus.classList.remove("show")
+    inquiryModal.classList.add("open")
+    inquiryModal.setAttribute("aria-hidden", "false")
+    document.body.classList.add("modal-open")
+
+    setTimeout(() => {
+        document.getElementById("studentName").focus()
+    }, 60)
+}
+
+const closeInquiryModal = () => {
+    inquiryModal.classList.remove("open")
+    inquiryModal.setAttribute("aria-hidden", "true")
+    document.body.classList.remove("modal-open")
+
+    if (previousFocus) {
+        previousFocus.focus()
+    }
+}
+
+document.querySelectorAll(".inquire-btn").forEach(button => {
+    button.addEventListener("click", () => {
+        openInquiryModal(button.dataset.course)
+    })
+})
+
+document.querySelector(".hero-inquire").addEventListener("click", () => {
+    openInquiryModal("General Course Counseling")
+})
+
+document.querySelector(".cta-inquire").addEventListener("click", () => {
+    openInquiryModal("General Course Counseling")
+})
+
+modalClose.addEventListener("click", closeInquiryModal)
+
+inquiryModal.addEventListener("click", event => {
+    if (event.target === inquiryModal) {
+        closeInquiryModal()
+    }
+})
+
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+        if (inquiryModal.classList.contains("open")) {
+            closeInquiryModal()
+        } else if (navLinks.classList.contains("open")) {
+            setMenu(false)
+        }
+    }
+})
+
+inquiryForm.addEventListener("submit", event => {
+    event.preventDefault()
+
+    if (!inquiryForm.checkValidity()) {
+        inquiryForm.reportValidity()
+        return
+    }
+
+    formStatus.classList.add("show")
+    formStatus.scrollIntoView({ behavior: "smooth", block: "nearest" })
+
+    setTimeout(() => {
+        inquiryForm.reset()
+        selectedCourse.value = ""
+    }, 900)
+})
+
+const processObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            processTrack.classList.add("drawn")
+            processObserver.disconnect()
+        }
+    })
+}, {
+    threshold: .3
+})
+
+processObserver.observe(processTrack)
+
+const processStepObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible")
+            processStepObserver.unobserve(entry.target)
+        }
+    })
+}, {
+    threshold: .35
+})
+
+document.querySelectorAll(".process-step").forEach(step => {
+    processStepObserver.observe(step)
+})
+
+document.querySelectorAll(".social-link[href='#']").forEach(link => {
+    link.addEventListener("click", event => {
+        event.preventDefault()
+    })
+})
+
+document.getElementById("currentYear").textContent = new Date().getFullYear()
+
+filterCourses()
+</script>
+
+</body>
+</html>

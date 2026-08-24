@@ -1,0 +1,2464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0A192F">
+<meta name="description" content="About DevX Computer Institute, its academic legacy, mission, vision, institutional milestones, faculty, and impact.">
+<title>About Us | DevX Computer Institute</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+
+:root {
+    --navy: #0A192F;
+    --navy-deep: #071221;
+    --navy-soft: #12243e;
+    --ivory: #F8F9FA;
+    --white: #FFFFFF;
+    --charcoal: #1E293B;
+    --slate: #64748B;
+    --border: #E2E8F0;
+    --surface: #F1F4F7;
+    --crimson: #8B0000;
+    --crimson-dark: #680000;
+    --gold: #D4AF37;
+    --gold-light: #E6C95F;
+    --shadow-sm: 0 10px 28px rgba(10,25,47,.07);
+    --shadow-md: 0 20px 48px rgba(10,25,47,.12);
+    --shadow-lg: 0 32px 78px rgba(10,25,47,.18);
+    --radius-sm: 9px;
+    --radius-md: 18px;
+    --radius-lg: 28px;
+    --container: 1220px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    color: var(--charcoal);
+    background: var(--ivory);
+    line-height: 1.65;
+    overflow-x: hidden;
+}
+
+body.menu-open,
+body.modal-open {
+    overflow: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    border: 0;
+}
+
+img,
+svg {
+    max-width: 100%;
+    display: block;
+}
+
+section {
+    scroll-margin-top: 105px;
+}
+
+.container {
+    width: min(calc(100% - 40px), var(--container));
+    margin-inline: auto;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--crimson);
+    font-size: .76rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    margin-bottom: 14px;
+}
+
+.eyebrow::before {
+    content: "";
+    width: 30px;
+    height: 2px;
+    background: var(--gold);
+}
+
+.section-title {
+    font-family: "Playfair Display", Georgia, serif;
+    color: var(--navy);
+    font-size: clamp(2.1rem, 4.5vw, 3.7rem);
+    line-height: 1.1;
+    letter-spacing: -.04em;
+}
+
+.section-copy {
+    margin-top: 18px;
+    max-width: 700px;
+    color: var(--slate);
+    font-size: 1.02rem;
+}
+
+.btn {
+    min-height: 51px;
+    padding: 0 22px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: .91rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: var(--crimson);
+    color: var(--white);
+    box-shadow: 0 14px 30px rgba(139,0,0,.22);
+}
+
+.btn-primary:hover {
+    background: var(--crimson-dark);
+    box-shadow: 0 18px 38px rgba(139,0,0,.29);
+}
+
+.btn-secondary {
+    color: var(--navy);
+    background: var(--white);
+    border: 1px solid rgba(10,25,47,.18);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+    border-color: var(--gold);
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+.btn-gold:hover {
+    background: var(--gold-light);
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.topbar {
+    background: var(--navy-deep);
+    color: #D7E0EB;
+    font-size: .77rem;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.topbar-inner {
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.topbar-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.topbar-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.topbar-item strong {
+    color: var(--gold);
+}
+
+.topbar .icon {
+    width: 15px;
+    height: 15px;
+    color: var(--gold);
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(248,249,250,.98);
+    border-bottom: 1px solid transparent;
+    transition: background .3s ease, box-shadow .3s ease, border-color .3s ease, backdrop-filter .3s ease;
+}
+
+.header.scrolled {
+    background: rgba(248,249,250,.88);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 10px 38px rgba(10,25,47,.09);
+    border-color: rgba(10,25,47,.08);
+}
+
+.navbar {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.brand {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-mark {
+    width: 46px;
+    height: 46px;
+    border-radius: 7px;
+    display: grid;
+    place-items: center;
+    color: var(--gold);
+    background: var(--navy);
+    border: 1px solid rgba(212,175,55,.75);
+    box-shadow: inset 0 0 0 4px rgba(212,175,55,.07);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.13rem;
+    font-weight: 800;
+}
+
+.brand-text {
+    display: grid;
+    line-height: 1.05;
+}
+
+.brand-text strong {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.15rem;
+    color: var(--navy);
+}
+
+.brand-text small {
+    margin-top: 5px;
+    color: var(--slate);
+    font-size: .59rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .13em;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-links > a:not(.portal-btn) {
+    position: relative;
+    padding: 12px 10px;
+    color: #334155;
+    font-size: .88rem;
+    font-weight: 700;
+    transition: color .2s ease;
+}
+
+.nav-links > a:not(.portal-btn)::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 6px;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform .25s ease;
+}
+
+.nav-links > a:hover,
+.nav-links > a.active {
+    color: var(--crimson);
+}
+
+.nav-links > a:hover::after,
+.nav-links > a.active::after {
+    transform: scaleX(1);
+}
+
+.portal-btn {
+    min-height: 44px;
+    padding: 0 16px;
+    margin-left: 8px;
+    border-radius: 7px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--white);
+    background: var(--navy);
+    font-size: .84rem;
+    font-weight: 800;
+    transition: background .25s ease, transform .25s ease;
+}
+
+.portal-btn:hover {
+    background: var(--crimson);
+    transform: translateY(-1px);
+}
+
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 7px;
+    color: var(--white);
+    background: var(--navy);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    transition: transform .25s ease, opacity .25s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobile-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+    background: rgba(7,18,33,.57);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s ease;
+}
+
+.mobile-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.page-hero {
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    background:
+        linear-gradient(90deg, rgba(7,18,33,.98) 0%, rgba(10,25,47,.95) 55%, rgba(10,25,47,.82) 100%),
+        linear-gradient(135deg, #0A192F, #12243e);
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: linear-gradient(to right, rgba(0,0,0,.8), transparent 85%);
+}
+
+.page-hero::after {
+    content: "";
+    position: absolute;
+    right: 8%;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(transparent, rgba(212,175,55,.7), transparent);
+}
+
+.page-hero-inner {
+    position: relative;
+    z-index: 2;
+    padding: 90px 0 94px;
+    max-width: 900px;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    color: #CAD5E3;
+    font-size: .78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    opacity: 0;
+    animation: fadeUp .7s ease .12s forwards;
+}
+
+.breadcrumb a {
+    color: var(--gold);
+}
+
+.breadcrumb span:last-child {
+    color: #D8E0E9;
+}
+
+.hero-title {
+    margin-top: 22px;
+    max-width: 880px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(3rem, 6vw, 5.7rem);
+    line-height: 1.02;
+    letter-spacing: -.055em;
+    opacity: 0;
+    animation: fadeUp .8s ease .27s forwards;
+}
+
+.hero-title em {
+    font-style: normal;
+    color: var(--gold);
+}
+
+.hero-copy {
+    margin-top: 23px;
+    max-width: 720px;
+    color: #C8D3E1;
+    font-size: clamp(1rem, 2vw, 1.12rem);
+    opacity: 0;
+    animation: fadeUp .8s ease .43s forwards;
+}
+
+.hero-actions {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeUp .8s ease .6s forwards;
+}
+
+.hero-actions .btn-secondary {
+    background: rgba(255,255,255,.06);
+    color: var(--white);
+    border-color: rgba(255,255,255,.25);
+    box-shadow: none;
+}
+
+.hero-actions .btn-secondary:hover {
+    border-color: var(--gold);
+    background: rgba(255,255,255,.11);
+}
+
+.story {
+    padding: 105px 0;
+    background: var(--ivory);
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.02fr) minmax(360px, .98fr);
+    gap: 70px;
+    align-items: center;
+}
+
+.story-content p {
+    color: var(--slate);
+    margin-top: 18px;
+    font-size: .99rem;
+}
+
+.story-points {
+    margin-top: 28px;
+    display: grid;
+    gap: 14px;
+}
+
+.story-point {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 13px;
+    align-items: start;
+}
+
+.story-point-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    background: var(--navy);
+    color: var(--gold);
+}
+
+.story-point strong {
+    display: block;
+    color: var(--navy);
+    font-size: .92rem;
+}
+
+.story-point span {
+    display: block;
+    margin-top: 3px;
+    color: var(--slate);
+    font-size: .84rem;
+}
+
+.legacy-panel {
+    position: relative;
+    min-height: 510px;
+    border-radius: var(--radius-lg);
+    background: var(--navy);
+    color: var(--white);
+    padding: 42px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.legacy-panel::before {
+    content: "";
+    position: absolute;
+    inset: 15px;
+    border: 1px solid rgba(212,175,55,.32);
+    border-radius: 20px;
+    pointer-events: none;
+}
+
+.legacy-panel::after {
+    content: "";
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    right: -70px;
+    bottom: -70px;
+    border: 1px solid rgba(212,175,55,.2);
+    transform: rotate(45deg);
+}
+
+.legacy-seal {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--gold);
+    border: 1px solid rgba(212,175,55,.75);
+    outline: 5px double rgba(212,175,55,.24);
+    outline-offset: 5px;
+}
+
+.legacy-seal .icon {
+    width: 38px;
+    height: 38px;
+}
+
+.legacy-panel small {
+    position: relative;
+    z-index: 2;
+    display: block;
+    margin-top: 34px;
+    color: var(--gold);
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.legacy-panel h3 {
+    position: relative;
+    z-index: 2;
+    max-width: 430px;
+    margin-top: 8px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.13;
+}
+
+.legacy-panel p {
+    position: relative;
+    z-index: 2;
+    margin-top: 17px;
+    max-width: 460px;
+    color: #C9D5E4;
+}
+
+.accreditation-list {
+    position: relative;
+    z-index: 2;
+    list-style: none;
+    display: grid;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.accreditation-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #E2E8F0;
+    font-size: .87rem;
+}
+
+.check {
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--gold);
+    background: rgba(212,175,55,.11);
+}
+
+.check .icon {
+    width: 13px;
+    height: 13px;
+}
+
+.principles {
+    padding: 100px 0;
+    background: var(--surface);
+    border-block: 1px solid var(--border);
+}
+
+.tabs-shell {
+    margin-top: 44px;
+    display: grid;
+    grid-template-columns: 270px minmax(0, 1fr);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--white);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.principle-tabs {
+    padding: 16px;
+    background: #F4F6F8;
+    border-right: 1px solid var(--border);
+    display: grid;
+    align-content: start;
+    gap: 8px;
+}
+
+.principle-tab {
+    min-height: 58px;
+    padding: 0 17px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: transparent;
+    color: #475569;
+    font-weight: 800;
+    font-size: .87rem;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.principle-tab:hover,
+.principle-tab.active {
+    color: var(--white);
+    background: var(--navy);
+}
+
+.principle-tab .tab-number {
+    color: #94A3B8;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: .76rem;
+}
+
+.principle-tab.active .tab-number {
+    color: var(--gold);
+}
+
+.principle-content {
+    min-height: 375px;
+    padding: 48px;
+    position: relative;
+}
+
+.principle-pane {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.principle-pane.active {
+    display: block;
+    animation: paneFade .45s ease forwards;
+}
+
+.principle-pane small {
+    color: var(--crimson);
+    font-size: .72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+}
+
+.principle-pane h3 {
+    margin-top: 8px;
+    color: var(--navy);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(1.9rem, 4vw, 2.9rem);
+    line-height: 1.15;
+}
+
+.principle-pane p {
+    margin-top: 17px;
+    max-width: 790px;
+    color: var(--slate);
+}
+
+.values-grid {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.value-item {
+    padding: 14px;
+    border-radius: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+
+.value-item strong {
+    display: block;
+    color: var(--navy);
+    font-size: .86rem;
+}
+
+.value-item span {
+    display: block;
+    margin-top: 3px;
+    color: var(--slate);
+    font-size: .8rem;
+}
+
+.timeline-section {
+    padding: 105px 0;
+    background: var(--white);
+}
+
+.timeline {
+    position: relative;
+    margin-top: 55px;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 40px;
+    width: 2px;
+    background: #DDE3EA;
+    overflow: hidden;
+}
+
+.timeline-line::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(var(--gold), var(--crimson));
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 1.5s cubic-bezier(.22,.72,.25,1);
+}
+
+.timeline.drawn .timeline-line::after {
+    transform: scaleY(1);
+}
+
+.timeline-items {
+    display: grid;
+    gap: 23px;
+}
+
+.timeline-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 82px minmax(0, 1fr);
+    align-items: start;
+}
+
+.timeline-node-wrap {
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+}
+
+.timeline-node {
+    position: relative;
+    z-index: 2;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 4px solid #CBD5E1;
+    box-shadow: 0 0 0 5px var(--white);
+    transition: border-color .35s ease, transform .35s ease, background .35s ease;
+}
+
+.timeline-item.visible .timeline-node {
+    border-color: var(--gold);
+    background: var(--navy);
+    transform: scale(1.15);
+}
+
+.timeline-card {
+    position: relative;
+    min-height: 160px;
+    padding: 25px 28px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--ivory);
+    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+
+.timeline-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(212,175,55,.55);
+    box-shadow: var(--shadow-md);
+}
+
+.timeline-year {
+    color: var(--crimson);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.timeline-card h3 {
+    margin-top: 5px;
+    color: var(--navy);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.42rem;
+}
+
+.timeline-card p {
+    margin-top: 8px;
+    color: var(--slate);
+    font-size: .9rem;
+}
+
+.impact {
+    background: var(--navy);
+    color: var(--white);
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.metric {
+    position: relative;
+    min-height: 186px;
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid rgba(255,255,255,.11);
+}
+
+.metric:last-child {
+    border-right: 0;
+}
+
+.metric-number {
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+    color: var(--gold);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2.6rem, 5vw, 4.2rem);
+    line-height: 1;
+    letter-spacing: -.04em;
+}
+
+.metric-label {
+    margin-top: 12px;
+    color: #CCD6E2;
+    font-size: .87rem;
+    font-weight: 700;
+}
+
+.metric::after {
+    content: "";
+    position: absolute;
+    left: 36px;
+    bottom: 27px;
+    width: 30px;
+    height: 2px;
+    background: var(--crimson);
+}
+
+.faculty {
+    padding: 105px 0;
+    background: var(--ivory);
+}
+
+.faculty-grid {
+    margin-top: 46px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.faculty-card {
+    position: relative;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 10px 28px rgba(10,25,47,.055);
+    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+
+.faculty-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    width: 0;
+    height: 4px;
+    background: var(--gold);
+    transition: width .35s ease;
+}
+
+.faculty-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(212,175,55,.45);
+    box-shadow: var(--shadow-md);
+}
+
+.faculty-card:hover::before {
+    width: 100%;
+}
+
+.faculty-photo {
+    position: relative;
+    aspect-ratio: 4 / 4.35;
+    overflow: hidden;
+    background:
+        linear-gradient(145deg, #E8EDF3, #D7DEE7);
+}
+
+.faculty-photo::before {
+    content: "";
+    position: absolute;
+    width: 48%;
+    aspect-ratio: 1;
+    left: 26%;
+    top: 18%;
+    border-radius: 50%;
+    background: #B7C2CF;
+}
+
+.faculty-photo::after {
+    content: "";
+    position: absolute;
+    width: 72%;
+    height: 50%;
+    left: 14%;
+    bottom: -12%;
+    border-radius: 48% 48% 0 0;
+    background: #A8B5C4;
+}
+
+.faculty-monogram {
+    position: absolute;
+    z-index: 3;
+    right: 18px;
+    bottom: 18px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--navy);
+    color: var(--gold);
+    border: 2px solid var(--white);
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 800;
+}
+
+.faculty-socials {
+    position: absolute;
+    z-index: 5;
+    left: 16px;
+    bottom: 16px;
+    display: flex;
+    gap: 7px;
+    transform: translateY(12px);
+    opacity: 0;
+    transition: .3s ease;
+}
+
+.faculty-card:hover .faculty-socials {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.faculty-social {
+    width: 35px;
+    height: 35px;
+    border-radius: 6px;
+    display: grid;
+    place-items: center;
+    color: var(--white);
+    background: rgba(10,25,47,.92);
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.faculty-social:hover {
+    background: var(--gold);
+    color: var(--navy);
+    transform: translateY(-2px);
+}
+
+.faculty-social .icon {
+    width: 16px;
+    height: 16px;
+}
+
+.faculty-body {
+    padding: 23px;
+}
+
+.faculty-body h3 {
+    color: var(--navy);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.32rem;
+    line-height: 1.2;
+}
+
+.faculty-role {
+    display: block;
+    margin-top: 5px;
+    color: var(--crimson);
+    font-size: .75rem;
+    font-weight: 800;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+
+.expertise {
+    margin-top: 17px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.expertise span {
+    padding: 6px 8px;
+    border-radius: 5px;
+    color: #475569;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    font-size: .68rem;
+    font-weight: 700;
+}
+
+.faculty-bio {
+    margin-top: 14px;
+    color: var(--slate);
+    font-size: .82rem;
+}
+
+.cta {
+    padding: 0 0 105px;
+    background: var(--ivory);
+}
+
+.cta-panel {
+    position: relative;
+    overflow: hidden;
+    padding: 58px;
+    border-radius: var(--radius-lg);
+    background: var(--crimson);
+    color: var(--white);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 42px;
+    box-shadow: 0 26px 62px rgba(139,0,0,.2);
+}
+
+.cta-panel::before,
+.cta-panel::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.14);
+}
+
+.cta-panel::before {
+    width: 370px;
+    height: 370px;
+    top: -190px;
+    right: -140px;
+}
+
+.cta-panel::after {
+    width: 240px;
+    height: 240px;
+    top: -120px;
+    right: -80px;
+}
+
+.cta-copy,
+.cta-actions {
+    position: relative;
+    z-index: 2;
+}
+
+.cta-copy small {
+    display: block;
+    color: #F1D99B;
+    font-size: .7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+}
+
+.cta-copy h2 {
+    margin-top: 8px;
+    max-width: 720px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2.1rem, 4vw, 3.6rem);
+    line-height: 1.1;
+}
+
+.cta-copy p {
+    margin-top: 14px;
+    max-width: 650px;
+    color: #F3DDDD;
+}
+
+.cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.cta-actions .btn-secondary {
+    background: rgba(255,255,255,.06);
+    color: var(--white);
+    border-color: rgba(255,255,255,.28);
+    box-shadow: none;
+}
+
+.cta-actions .btn-secondary:hover {
+    border-color: var(--gold);
+}
+
+.footer {
+    padding-top: 70px;
+    background: var(--navy-deep);
+    color: #CBD5E1;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr .7fr .7fr 1fr;
+    gap: 52px;
+    padding-bottom: 55px;
+}
+
+.footer .brand-text strong {
+    color: var(--white);
+}
+
+.footer .brand-text small {
+    color: #94A3B8;
+}
+
+.footer-about {
+    margin-top: 20px;
+    max-width: 390px;
+    color: #94A3B8;
+    font-size: .86rem;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 9px;
+    margin-top: 24px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    color: #D9E2EC;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 7px;
+    transition: background .25s ease, color .25s ease, border-color .25s ease, transform .25s ease;
+}
+
+.social-link:hover {
+    color: var(--navy);
+    background: var(--gold);
+    border-color: var(--gold);
+    transform: translateY(-2px);
+}
+
+.footer-title {
+    color: var(--white);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.12rem;
+    margin-bottom: 18px;
+}
+
+.footer-links {
+    display: grid;
+    gap: 10px;
+}
+
+.footer-links a {
+    width: fit-content;
+    color: #94A3B8;
+    font-size: .83rem;
+    transition: color .2s ease, transform .2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+    transform: translateX(3px);
+}
+
+.footer-contact {
+    display: grid;
+    gap: 15px;
+}
+
+.footer-contact-item {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 10px;
+    color: #94A3B8;
+    font-size: .82rem;
+}
+
+.footer-contact-item .icon {
+    width: 17px;
+    color: var(--gold);
+}
+
+.footer-bottom {
+    min-height: 72px;
+    border-top: 1px solid rgba(255,255,255,.09);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    color: #7F8DA0;
+    font-size: .75rem;
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-bottom-links a:hover {
+    color: var(--gold);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .7s ease, transform .7s cubic-bezier(.22,.7,.24,1);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-38px);
+    transition: opacity .75s ease, transform .75s cubic-bezier(.22,.7,.24,1);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(38px);
+    transition: opacity .75s ease, transform .75s cubic-bezier(.22,.7,.24,1);
+}
+
+.scale-reveal {
+    opacity: 0;
+    transform: scale(.965);
+    transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible,
+.reveal-left.visible,
+.reveal-right.visible,
+.scale-reveal.visible {
+    opacity: 1;
+    transform: translate(0) scale(1);
+}
+
+.stagger > * {
+    transition-delay: calc(var(--i, 0) * 90ms);
+}
+
+.back-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 850;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--white);
+    background: var(--navy);
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: .25s ease;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--crimson);
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes paneFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1120px) {
+    .story-grid {
+        gap: 42px;
+    }
+
+    .faculty-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-grid {
+        grid-template-columns: 1.4fr .75fr .75fr;
+    }
+
+    .footer-col:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 980px) {
+    .topbar-inner {
+        justify-content: center;
+    }
+
+    .topbar-right {
+        display: none;
+    }
+
+    .nav-links {
+        position: fixed;
+        z-index: 1100;
+        top: 0;
+        right: 0;
+        width: min(84vw, 360px);
+        height: 100dvh;
+        padding: 104px 28px 35px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        background: var(--ivory);
+        box-shadow: -20px 0 55px rgba(10,25,47,.17);
+        transform: translateX(105%);
+        transition: transform .35s cubic-bezier(.22,.75,.2,1);
+    }
+
+    .nav-links.open {
+        transform: translateX(0);
+    }
+
+    .nav-links > a:not(.portal-btn) {
+        padding: 14px 4px;
+        border-bottom: 1px solid var(--border);
+        font-size: 1rem;
+    }
+
+    .nav-links > a:not(.portal-btn)::after {
+        display: none;
+    }
+
+    .portal-btn {
+        min-height: 50px;
+        margin: 18px 0 0;
+        justify-content: center;
+    }
+
+    .menu-toggle {
+        position: relative;
+        z-index: 1200;
+        display: flex;
+    }
+
+    .story-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .legacy-panel {
+        max-width: 700px;
+    }
+
+    .tabs-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .principle-tabs {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .principle-tab {
+        justify-content: center;
+    }
+
+    .principle-tab .tab-number {
+        display: none;
+    }
+
+    .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .metric:nth-child(2) {
+        border-right: 0;
+    }
+
+    .metric:nth-child(-n+2) {
+        border-bottom: 1px solid rgba(255,255,255,.11);
+    }
+
+    .cta-panel {
+        grid-template-columns: 1fr;
+        padding: 48px;
+    }
+
+    .cta-actions {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 740px) {
+    .container {
+        width: min(calc(100% - 28px), var(--container));
+    }
+
+    .topbar {
+        font-size: .69rem;
+    }
+
+    .topbar-group {
+        justify-content: center;
+        gap: 11px;
+    }
+
+    .topbar-item:nth-child(2) {
+        display: none;
+    }
+
+    .navbar {
+        min-height: 70px;
+    }
+
+    .brand-mark {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-text strong {
+        font-size: 1rem;
+    }
+
+    .brand-text small {
+        font-size: .53rem;
+    }
+
+    .page-hero {
+        min-height: 460px;
+    }
+
+    .page-hero-inner {
+        padding: 72px 0 78px;
+    }
+
+    .hero-title {
+        font-size: clamp(2.8rem, 13vw, 4.5rem);
+    }
+
+    .story,
+    .principles,
+    .timeline-section,
+    .faculty {
+        padding: 78px 0;
+    }
+
+    .legacy-panel {
+        padding: 30px 24px;
+        min-height: auto;
+    }
+
+    .principle-tabs {
+        grid-template-columns: 1fr;
+        padding: 11px;
+    }
+
+    .principle-tab {
+        justify-content: space-between;
+    }
+
+    .principle-tab .tab-number {
+        display: inline;
+    }
+
+    .principle-content {
+        padding: 30px 24px;
+        min-height: 400px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-line {
+        left: 23px;
+    }
+
+    .timeline-item {
+        grid-template-columns: 48px minmax(0, 1fr);
+    }
+
+    .timeline-card {
+        padding: 22px 20px;
+    }
+
+    .impact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .metric,
+    .metric:nth-child(2),
+    .metric:nth-child(-n+2) {
+        min-height: 145px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(255,255,255,.11);
+    }
+
+    .metric:last-child {
+        border-bottom: 0;
+    }
+
+    .faculty-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .faculty-card {
+        max-width: 480px;
+        width: 100%;
+        margin-inline: auto;
+    }
+
+    .cta {
+        padding-bottom: 78px;
+    }
+
+    .cta-panel {
+        padding: 36px 25px;
+    }
+
+    .cta-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 38px 24px;
+    }
+
+    .footer-col:first-child,
+    .footer-col:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        padding: 20px 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .story-point {
+        grid-template-columns: 38px 1fr;
+    }
+
+    .story-point-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .faculty-socials {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-col,
+    .footer-col:first-child,
+    .footer-col:last-child {
+        grid-column: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+    <div class="container topbar-inner">
+        <div class="topbar-group">
+            <span class="topbar-item">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>
+                Admissions Helpline: <strong>+91 98765 43210</strong>
+            </span>
+            <span class="topbar-item">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+                admissions@devxinstitute.in
+            </span>
+        </div>
+
+        <div class="topbar-group topbar-right">
+            <span class="topbar-item">
+                <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                Mon–Sat, 8:00 AM–7:00 PM
+            </span>
+            <span class="topbar-item"><strong>Admissions Open 2026</strong></span>
+        </div>
+    </div>
+</div>
+
+<header class="header" id="header">
+    <div class="container navbar">
+        <a href="index.html" class="brand" aria-label="DevX Computer Institute home">
+            <span class="brand-mark">DX</span>
+            <span class="brand-text">
+                <strong>DevX</strong>
+                <small>Computer Institute</small>
+            </span>
+        </a>
+
+        <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="services.html">Services</a>
+            <a href="design.html">Design</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html" class="portal-btn">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/></svg>
+                Student Portal
+            </a>
+        </nav>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<main>
+
+<section class="page-hero">
+    <div class="container page-hero-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>About Us</span>
+        </nav>
+
+        <h1 class="hero-title">Empowering Future <em>Tech Leaders</em></h1>
+
+        <p class="hero-copy">
+            DevX Computer Institute is built around rigorous teaching, practical technical mastery and career-focused mentorship, preparing learners to thrive in a fast-changing digital economy without compromising academic discipline.
+        </p>
+
+        <div class="hero-actions">
+            <a href="#our-story" class="btn btn-primary">
+                Discover Our Legacy
+                <svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+            </a>
+            <a href="contact.html" class="btn btn-secondary">
+                Visit Our Campus
+                <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="story" id="our-story">
+    <div class="container story-grid">
+        <div class="story-content reveal-left">
+            <div class="eyebrow">Our Story & Legacy</div>
+            <h2 class="section-title">Technical Education with Purpose, Structure and Standards</h2>
+
+            <p>
+                DevX Computer Institute began with a straightforward belief: computer education should build real capability, not just familiarity with software. From foundational digital literacy to advanced software, data and design pathways, our academic model is centered on repeated practice, clear progression and accountable learning.
+            </p>
+
+            <p>
+                Over the years, DevX has expanded its laboratories, instructor network, curriculum depth and industry engagement while retaining a traditional academic culture of discipline, mentorship and measurable student progress.
+            </p>
+
+            <div class="story-points">
+                <div class="story-point">
+                    <div class="story-point-icon">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="m3 10 9-5 9 5-9 5z"/><path d="M7 12v5c3 2 7 2 10 0v-5"/></svg>
+                    </div>
+                    <div>
+                        <strong>Practice-First Academic Model</strong>
+                        <span>Every technical concept is strengthened through structured exercises, projects and supervised practical work.</span>
+                    </div>
+                </div>
+
+                <div class="story-point">
+                    <div class="story-point-icon">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 19h16"/><path d="m7 15 4-4 3 2 5-6"/></svg>
+                    </div>
+                    <div>
+                        <strong>Career-Oriented Progression</strong>
+                        <span>Programs are designed to help learners move from knowledge acquisition to confidence, portfolio development and employability.</span>
+                    </div>
+                </div>
+
+                <div class="story-point">
+                    <div class="story-point-icon">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M12 3 3 7l9 4 9-4z"/><path d="M5 10v6c4 3 10 3 14 0v-6"/></svg>
+                    </div>
+                    <div>
+                        <strong>Institutional Learning Culture</strong>
+                        <span>Students receive faculty guidance, assessments and constructive feedback in a focused academic environment.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="legacy-panel reveal-right">
+            <div class="legacy-seal">
+                <svg class="icon" viewBox="0 0 24 24"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9z"/></svg>
+            </div>
+
+            <small>Institutional Standard</small>
+            <h3>Education Designed for Professional Readiness</h3>
+            <p>DevX maintains a structured training environment with clear academic expectations, guided practical work and consistent learner support.</p>
+
+            <ul class="accreditation-list">
+                <li><span class="check"><svg class="icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg></span> Instructor-led practical laboratories</li>
+                <li><span class="check"><svg class="icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg></span> Industry-informed technical curriculum</li>
+                <li><span class="check"><svg class="icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg></span> Continuous assignments and assessments</li>
+                <li><span class="check"><svg class="icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg></span> Career and portfolio guidance</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="principles" id="mission">
+    <div class="container">
+        <div class="reveal">
+            <div class="eyebrow">Institutional Direction</div>
+            <h2 class="section-title">Mission, Vision & Core Values</h2>
+            <p class="section-copy">Our direction is defined by academic quality, practical relevance, professional ethics and a long-term commitment to student growth.</p>
+        </div>
+
+        <div class="tabs-shell scale-reveal">
+            <div class="principle-tabs" role="tablist" aria-label="Mission vision and values">
+                <button class="principle-tab active" data-pane="missionPane" role="tab" aria-selected="true">
+                    Mission
+                    <span class="tab-number">01</span>
+                </button>
+                <button class="principle-tab" data-pane="visionPane" role="tab" aria-selected="false">
+                    Vision
+                    <span class="tab-number">02</span>
+                </button>
+                <button class="principle-tab" data-pane="valuesPane" role="tab" aria-selected="false">
+                    Core Values
+                    <span class="tab-number">03</span>
+                </button>
+            </div>
+
+            <div class="principle-content">
+                <div class="principle-pane active" id="missionPane">
+                    <small>Our Mission</small>
+                    <h3>Make High-Quality Technical Education Practical, Clear and Career-Relevant</h3>
+                    <p>
+                        Our mission is to provide students with disciplined computer education that transforms theory into usable capability. We aim to build technical confidence through guided instruction, repeated practice, industry-aware curricula and meaningful feedback.
+                    </p>
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <strong>Practical Mastery</strong>
+                            <span>Learning is reinforced through hands-on application rather than passive instruction.</span>
+                        </div>
+                        <div class="value-item">
+                            <strong>Individual Progress</strong>
+                            <span>Faculty guidance helps students identify gaps and improve at a measurable pace.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="principle-pane" id="visionPane">
+                    <small>Our Vision</small>
+                    <h3>Build a Trusted Institution for the Next Generation of Technology Professionals</h3>
+                    <p>
+                        DevX seeks to become a benchmark for accessible yet rigorous technical training, known for producing graduates who can think clearly, work responsibly and contribute confidently in modern digital environments.
+                    </p>
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <strong>Future Readiness</strong>
+                            <span>Curricula evolve with changing technologies while preserving durable technical foundations.</span>
+                        </div>
+                        <div class="value-item">
+                            <strong>Professional Confidence</strong>
+                            <span>Students are prepared to communicate, collaborate and deliver work to professional standards.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="principle-pane" id="valuesPane">
+                    <small>Core Institutional Values</small>
+                    <h3>Discipline, Integrity, Excellence and Student Responsibility</h3>
+                    <p>
+                        Our values define how teaching is delivered, how progress is assessed and how every learner is encouraged to approach technical work.
+                    </p>
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <strong>Academic Integrity</strong>
+                            <span>We value original effort, responsible practice and honest assessment.</span>
+                        </div>
+                        <div class="value-item">
+                            <strong>Consistency</strong>
+                            <span>Strong technical ability is built through disciplined repetition and continuous improvement.</span>
+                        </div>
+                        <div class="value-item">
+                            <strong>Respect for Craft</strong>
+                            <span>Students are taught to value clarity, reliability and detail in every technical output.</span>
+                        </div>
+                        <div class="value-item">
+                            <strong>Career Responsibility</strong>
+                            <span>Learners are encouraged to take ownership of their skills, portfolio and professional development.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="timeline-section" id="milestones">
+    <div class="container">
+        <div class="reveal">
+            <div class="eyebrow">Institutional Milestones</div>
+            <h2 class="section-title">A Record of Steady Academic Growth</h2>
+            <p class="section-copy">From a focused training centre to a broader technical learning ecosystem, DevX has expanded through deliberate improvements in faculty, facilities and curriculum.</p>
+        </div>
+
+        <div class="timeline" id="timeline">
+            <div class="timeline-line"></div>
+
+            <div class="timeline-items">
+                <article class="timeline-item reveal">
+                    <div class="timeline-node-wrap"><span class="timeline-node"></span></div>
+                    <div class="timeline-card">
+                        <div class="timeline-year">2012</div>
+                        <h3>DevX Computer Institute Established</h3>
+                        <p>DevX begins with a focused portfolio of computer fundamentals and office productivity programs built around classroom discipline and supervised practical work.</p>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-node-wrap"><span class="timeline-node"></span></div>
+                    <div class="timeline-card">
+                        <div class="timeline-year">2015</div>
+                        <h3>Dedicated Programming Laboratory Opened</h3>
+                        <p>Additional systems and lab hours are introduced to support structured programming courses and extended student practice sessions.</p>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-node-wrap"><span class="timeline-node"></span></div>
+                    <div class="timeline-card">
+                        <div class="timeline-year">2018</div>
+                        <h3>Professional Development Tracks Expanded</h3>
+                        <p>Web development, database, programming and design pathways are formalized into longer, project-driven technical programs.</p>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-node-wrap"><span class="timeline-node"></span></div>
+                    <div class="timeline-card">
+                        <div class="timeline-year">2021</div>
+                        <h3>Industry Engagement & Career Mentorship Strengthened</h3>
+                        <p>DevX expands placement preparation, portfolio review and employer engagement activities to improve student transition into professional roles.</p>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-node-wrap"><span class="timeline-node"></span></div>
+                    <div class="timeline-card">
+                        <div class="timeline-year">2024</div>
+                        <h3>Advanced Data & Digital Design Labs Introduced</h3>
+                        <p>New learning tracks support Python, analytics, interface design and portfolio-based digital production with upgraded laboratory infrastructure.</p>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-node-wrap"><span class="timeline-node"></span></div>
+                    <div class="timeline-card">
+                        <div class="timeline-year">2026</div>
+                        <h3>Integrated Career Cohort Model Launched</h3>
+                        <p>Academic instruction, projects, assessments, communication training and interview preparation are combined into structured career-focused cohorts.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="impact" aria-label="DevX impact statistics">
+    <div class="container impact-grid">
+        <div class="metric">
+            <div class="metric-number"><span class="counter" data-target="14">0</span><span>+</span></div>
+            <div class="metric-label">Years of Excellence</div>
+        </div>
+
+        <div class="metric">
+            <div class="metric-number"><span class="counter" data-target="9200">0</span><span>+</span></div>
+            <div class="metric-label">Students Graduated</div>
+        </div>
+
+        <div class="metric">
+            <div class="metric-number"><span class="counter" data-target="80">0</span><span>+</span></div>
+            <div class="metric-label">Corporate Partners</div>
+        </div>
+
+        <div class="metric">
+            <div class="metric-number"><span class="counter" data-target="32">0</span><span>+</span></div>
+            <div class="metric-label">Certified Instructors</div>
+        </div>
+    </div>
+</section>
+
+<section class="faculty" id="faculty">
+    <div class="container">
+        <div class="reveal">
+            <div class="eyebrow">Faculty & Leadership</div>
+            <h2 class="section-title">Experienced Mentors Behind the DevX Standard</h2>
+            <p class="section-copy">Our academic leadership combines teaching discipline, technical experience and practical mentoring to help students build dependable professional capability.</p>
+        </div>
+
+        <div class="faculty-grid stagger">
+            <article class="faculty-card reveal" style="--i:0">
+                <div class="faculty-photo">
+                    <span class="faculty-monogram">AK</span>
+                    <div class="faculty-socials">
+                        <a href="#" class="faculty-social" aria-label="LinkedIn">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v2"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                        <a href="mailto:faculty@devxinstitute.in" class="faculty-social" aria-label="Email">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="faculty-body">
+                    <h3>Arvind Khurana</h3>
+                    <span class="faculty-role">Academic Director</span>
+                    <div class="expertise">
+                        <span>Software Engineering</span>
+                        <span>Curriculum Design</span>
+                    </div>
+                    <p class="faculty-bio">Leads academic planning, program quality and instructor development across DevX technical pathways.</p>
+                </div>
+            </article>
+
+            <article class="faculty-card reveal" style="--i:1">
+                <div class="faculty-photo">
+                    <span class="faculty-monogram">NS</span>
+                    <div class="faculty-socials">
+                        <a href="#" class="faculty-social" aria-label="LinkedIn">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v2"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                        <a href="mailto:faculty@devxinstitute.in" class="faculty-social" aria-label="Email">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="faculty-body">
+                    <h3>Neha Sharma</h3>
+                    <span class="faculty-role">Head of Data Studies</span>
+                    <div class="expertise">
+                        <span>Python</span>
+                        <span>Data Analytics</span>
+                    </div>
+                    <p class="faculty-bio">Guides students through programming, analytical reasoning and project-based data workflows.</p>
+                </div>
+            </article>
+
+            <article class="faculty-card reveal" style="--i:2">
+                <div class="faculty-photo">
+                    <span class="faculty-monogram">RM</span>
+                    <div class="faculty-socials">
+                        <a href="#" class="faculty-social" aria-label="LinkedIn">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v2"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                        <a href="mailto:faculty@devxinstitute.in" class="faculty-social" aria-label="Email">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="faculty-body">
+                    <h3>Rohit Malhotra</h3>
+                    <span class="faculty-role">Senior Development Mentor</span>
+                    <div class="expertise">
+                        <span>Web Development</span>
+                        <span>Databases</span>
+                    </div>
+                    <p class="faculty-bio">Specializes in full-stack learning, code review and practical application architecture for student projects.</p>
+                </div>
+            </article>
+
+            <article class="faculty-card reveal" style="--i:3">
+                <div class="faculty-photo">
+                    <span class="faculty-monogram">PK</span>
+                    <div class="faculty-socials">
+                        <a href="#" class="faculty-social" aria-label="LinkedIn">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v2"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                        <a href="mailto:faculty@devxinstitute.in" class="faculty-social" aria-label="Email">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="faculty-body">
+                    <h3>Priya Kapoor</h3>
+                    <span class="faculty-role">Design Program Lead</span>
+                    <div class="expertise">
+                        <span>UI/UX</span>
+                        <span>Visual Design</span>
+                    </div>
+                    <p class="faculty-bio">Mentors students in interface thinking, visual hierarchy, design systems and professional portfolio presentation.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="container">
+        <div class="cta-panel scale-reveal">
+            <div class="cta-copy">
+                <small>Join DevX</small>
+                <h2>See the Learning Environment Before You Choose Your Program.</h2>
+                <p>Visit the DevX campus, meet our academic team and understand which upcoming technical cohort best matches your current skills and career goals.</p>
+            </div>
+
+            <div class="cta-actions">
+                <a href="contact.html" class="btn btn-gold">
+                    Schedule Campus Visit
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                </a>
+                <a href="services.html" class="btn btn-secondary">Explore Programs</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="brand">
+                    <span class="brand-mark">DX</span>
+                    <span class="brand-text">
+                        <strong>DevX</strong>
+                        <small>Computer Institute</small>
+                    </span>
+                </a>
+
+                <p class="footer-about">Professional computer education focused on practical skill, academic discipline, technical confidence and career readiness.</p>
+
+                <div class="footer-socials">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v2"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="YouTube">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M22 12s0-4-1-6c-.5-1-1.5-1.5-2.5-1.7C16.5 4 12 4 12 4s-4.5 0-6.5.3C4.5 4.5 3.5 5 3 6c-1 2-1 6-1 6s0 4 1 6c.5 1 1.5 1.5 2.5 1.7C7.5 20 12 20s4.5 0 6.5-.3c1-.2 2-.7 2.5-1.7 1-2 1-6 1-6z"/><path d="m10 9 5 3-5 3z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Institute</h3>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Programs</a>
+                    <a href="design.html">Design Courses</a>
+                    <a href="contact.html">Admissions</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Student Links</h3>
+                <div class="footer-links">
+                    <a href="login.html">Student Portal</a>
+                    <a href="services.html">Course Syllabus</a>
+                    <a href="contact.html">Academic Counselling</a>
+                    <a href="contact.html">Student Support</a>
+                    <a href="contact.html">Certificate Query</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Visit DevX</h3>
+                <div class="footer-contact">
+                    <div class="footer-contact-item">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                        <span>DevX Academic Centre, Main Market Road, New Delhi, India</span>
+                    </div>
+
+                    <div class="footer-contact-item">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/></svg>
+                        <span>+91 98765 43210</span>
+                    </div>
+
+                    <div class="footer-contact-item">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+                        <span>admissions@devxinstitute.in</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© <span id="currentYear"></span> DevX Computer Institute. All rights reserved.</span>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg class="icon" viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"/></svg>
+</button>
+
+<script>
+const header = document.getElementById("header")
+const menuToggle = document.getElementById("menuToggle")
+const navLinks = document.getElementById("navLinks")
+const mobileOverlay = document.getElementById("mobileOverlay")
+const backToTop = document.getElementById("backToTop")
+const timeline = document.getElementById("timeline")
+
+const updateScrollState = () => {
+    header.classList.toggle("scrolled", window.scrollY > 24)
+    backToTop.classList.toggle("show", window.scrollY > 650)
+}
+
+window.addEventListener("scroll", updateScrollState, { passive: true })
+updateScrollState()
+
+const setMenu = open => {
+    menuToggle.classList.toggle("active", open)
+    navLinks.classList.toggle("open", open)
+    mobileOverlay.classList.toggle("active", open)
+    document.body.classList.toggle("menu-open", open)
+    menuToggle.setAttribute("aria-expanded", String(open))
+}
+
+menuToggle.addEventListener("click", () => {
+    setMenu(!navLinks.classList.contains("open"))
+})
+
+mobileOverlay.addEventListener("click", () => {
+    setMenu(false)
+})
+
+navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => setMenu(false))
+})
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 980) setMenu(false)
+})
+
+backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+})
+
+const revealElements = document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .scale-reveal")
+
+const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible")
+            revealObserver.unobserve(entry.target)
+        }
+    })
+}, {
+    threshold: .13,
+    rootMargin: "0px 0px -35px 0px"
+})
+
+revealElements.forEach(element => revealObserver.observe(element))
+
+const principleTabs = document.querySelectorAll(".principle-tab")
+const principlePanes = document.querySelectorAll(".principle-pane")
+
+principleTabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+        const paneId = tab.dataset.pane
+
+        principleTabs.forEach(item => {
+            item.classList.remove("active")
+            item.setAttribute("aria-selected", "false")
+        })
+
+        principlePanes.forEach(pane => {
+            pane.classList.remove("active")
+        })
+
+        tab.classList.add("active")
+        tab.setAttribute("aria-selected", "true")
+
+        const selectedPane = document.getElementById(paneId)
+        requestAnimationFrame(() => {
+            selectedPane.classList.add("active")
+        })
+    })
+})
+
+const timelineObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            timeline.classList.add("drawn")
+            timelineObserver.disconnect()
+        }
+    })
+}, {
+    threshold: .18
+})
+
+timelineObserver.observe(timeline)
+
+const timelineItems = document.querySelectorAll(".timeline-item")
+
+const timelineItemObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible")
+            timelineItemObserver.unobserve(entry.target)
+        }
+    })
+}, {
+    threshold: .35,
+    rootMargin: "0px 0px -35px 0px"
+})
+
+timelineItems.forEach(item => timelineItemObserver.observe(item))
+
+const counters = document.querySelectorAll(".counter")
+const impactSection = document.querySelector(".impact")
+let countersStarted = false
+
+const animateCounter = counter => {
+    const target = Number(counter.dataset.target)
+    const duration = 1750
+    const startedAt = performance.now()
+
+    const update = now => {
+        const elapsed = now - startedAt
+        const progress = Math.min(elapsed / duration, 1)
+        const eased = 1 - Math.pow(1 - progress, 4)
+        const value = Math.floor(target * eased)
+
+        counter.textContent = value.toLocaleString("en-IN")
+
+        if (progress < 1) {
+            requestAnimationFrame(update)
+        } else {
+            counter.textContent = target.toLocaleString("en-IN")
+        }
+    }
+
+    requestAnimationFrame(update)
+}
+
+const counterObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !countersStarted) {
+            countersStarted = true
+            counters.forEach(animateCounter)
+            counterObserver.disconnect()
+        }
+    })
+}, {
+    threshold: .35
+})
+
+counterObserver.observe(impactSection)
+
+document.querySelectorAll(".faculty-social[href='#']").forEach(link => {
+    link.addEventListener("click", event => {
+        event.preventDefault()
+    })
+})
+
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && navLinks.classList.contains("open")) {
+        setMenu(false)
+    }
+})
+
+document.getElementById("currentYear").textContent = new Date().getFullYear()
+</script>
+
+</body>
+</html>

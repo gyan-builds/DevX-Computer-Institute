@@ -1,0 +1,2618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0A192F">
+<meta name="description" content="Contact DevX Computer Institute admissions for course counseling, campus visits, batch details, fees, training programs and student support.">
+<title>Contact Us | DevX Computer Institute</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+
+:root {
+    --navy: #0A192F;
+    --navy-deep: #071221;
+    --navy-soft: #12243F;
+    --ivory: #F8F9FA;
+    --white: #FFFFFF;
+    --charcoal: #1E293B;
+    --slate: #64748B;
+    --muted: #94A3B8;
+    --crimson: #8B0000;
+    --crimson-dark: #650000;
+    --gold: #D4AF37;
+    --gold-light: #E7CA62;
+    --border: #E2E8F0;
+    --surface: #F1F4F7;
+    --success: #1F6E52;
+    --danger: #B42318;
+    --shadow-sm: 0 10px 28px rgba(10,25,47,.07);
+    --shadow-md: 0 22px 52px rgba(10,25,47,.13);
+    --shadow-lg: 0 36px 86px rgba(10,25,47,.18);
+    --radius-sm: 8px;
+    --radius-md: 18px;
+    --radius-lg: 28px;
+    --container: 1240px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    min-width: 0;
+    overflow-x: hidden;
+    background: var(--ivory);
+    color: var(--charcoal);
+    font-family: "Inter", sans-serif;
+    line-height: 1.65;
+}
+
+body.menu-open,
+body.modal-open {
+    overflow: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    border: 0;
+}
+
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+section {
+    scroll-margin-top: 108px;
+}
+
+.container {
+    width: min(calc(100% - 40px), var(--container));
+    margin-inline: auto;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--crimson);
+    font-size: .75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    margin-bottom: 14px;
+}
+
+.eyebrow::before {
+    content: "";
+    width: 30px;
+    height: 2px;
+    background: var(--gold);
+}
+
+.section-title {
+    max-width: 900px;
+    color: var(--navy);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2.1rem, 4.5vw, 3.8rem);
+    line-height: 1.1;
+    letter-spacing: -.04em;
+}
+
+.section-copy {
+    max-width: 730px;
+    margin-top: 17px;
+    color: var(--slate);
+    font-size: 1.01rem;
+}
+
+.btn {
+    position: relative;
+    min-height: 51px;
+    padding: 0 21px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    overflow: hidden;
+    cursor: pointer;
+    font-size: .89rem;
+    font-weight: 800;
+    transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: var(--crimson);
+    color: var(--white);
+    box-shadow: 0 14px 32px rgba(139,0,0,.22);
+}
+
+.btn-primary:hover {
+    background: var(--crimson-dark);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--navy);
+    border: 1px solid rgba(10,25,47,.16);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+    border-color: var(--gold);
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+.btn-gold:hover {
+    background: var(--gold-light);
+}
+
+.topbar {
+    background: var(--navy-deep);
+    color: #D8E1EB;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    font-size: .76rem;
+}
+
+.topbar-inner {
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.topbar-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.topbar-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.topbar-item strong {
+    color: var(--gold);
+}
+
+.topbar .icon {
+    width: 15px;
+    height: 15px;
+    color: var(--gold);
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(248,249,250,.98);
+    border-bottom: 1px solid transparent;
+    transition: background .3s ease, box-shadow .3s ease, border-color .3s ease, backdrop-filter .3s ease;
+}
+
+.header.scrolled {
+    background: rgba(248,249,250,.87);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-color: rgba(10,25,47,.08);
+    box-shadow: 0 10px 38px rgba(10,25,47,.09);
+}
+
+.navbar {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.brand {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-mark {
+    width: 46px;
+    height: 46px;
+    border: 1px solid rgba(212,175,55,.78);
+    border-radius: 7px;
+    display: grid;
+    place-items: center;
+    background: var(--navy);
+    color: var(--gold);
+    box-shadow: inset 0 0 0 4px rgba(212,175,55,.07);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.brand-text {
+    display: grid;
+    line-height: 1.05;
+}
+
+.brand-text strong {
+    color: var(--navy);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.16rem;
+}
+
+.brand-text small {
+    margin-top: 5px;
+    color: var(--slate);
+    font-size: .59rem;
+    font-weight: 700;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-links > a:not(.portal-btn) {
+    position: relative;
+    padding: 12px 10px;
+    color: #334155;
+    font-size: .88rem;
+    font-weight: 700;
+    transition: color .2s ease;
+}
+
+.nav-links > a:not(.portal-btn)::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 6px;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform .25s ease;
+}
+
+.nav-links > a:hover,
+.nav-links > a.active {
+    color: var(--crimson);
+}
+
+.nav-links > a:hover::after,
+.nav-links > a.active::after {
+    transform: scaleX(1);
+}
+
+.portal-btn {
+    min-height: 44px;
+    margin-left: 8px;
+    padding: 0 16px;
+    border-radius: 7px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--navy);
+    color: var(--white);
+    font-size: .84rem;
+    font-weight: 800;
+    transition: background .25s ease, transform .25s ease;
+}
+
+.portal-btn:hover {
+    background: var(--crimson);
+    transform: translateY(-1px);
+}
+
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 7px;
+    background: var(--navy);
+    color: var(--white);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    transition: transform .25s ease, opacity .25s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobile-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+    background: rgba(7,18,33,.57);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s ease;
+}
+
+.mobile-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.page-hero {
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background:
+        linear-gradient(90deg, rgba(7,18,33,.99) 0%, rgba(10,25,47,.96) 55%, rgba(10,25,47,.86) 100%),
+        linear-gradient(135deg, var(--navy), var(--navy-soft));
+    color: var(--white);
+}
+
+.page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: linear-gradient(to right, rgba(0,0,0,.88), transparent 90%);
+}
+
+.page-hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 8%;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(transparent, rgba(212,175,55,.75), transparent);
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 2;
+    padding: 90px 0 96px;
+    max-width: 950px;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    color: #C9D5E3;
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeUp .7s ease .1s forwards;
+}
+
+.breadcrumb a {
+    color: var(--gold);
+}
+
+.hero-title {
+    max-width: 930px;
+    margin-top: 22px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(3rem, 6vw, 5.8rem);
+    line-height: 1;
+    letter-spacing: -.055em;
+    opacity: 0;
+    animation: fadeUp .8s ease .26s forwards;
+}
+
+.hero-title em {
+    font-style: normal;
+    color: var(--gold);
+}
+
+.hero-copy {
+    max-width: 760px;
+    margin-top: 23px;
+    color: #C9D4E2;
+    font-size: clamp(1rem, 2vw, 1.13rem);
+    opacity: 0;
+    animation: fadeUp .8s ease .42s forwards;
+}
+
+.hero-actions {
+    margin-top: 31px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeUp .8s ease .58s forwards;
+}
+
+.hero-actions .btn-secondary {
+    background: rgba(255,255,255,.06);
+    color: var(--white);
+    border-color: rgba(255,255,255,.24);
+    box-shadow: none;
+}
+
+.hero-actions .btn-secondary:hover {
+    background: rgba(255,255,255,.1);
+    border-color: var(--gold);
+}
+
+.channels {
+    padding: 95px 0;
+    background: var(--ivory);
+}
+
+.channels-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.channel-card {
+    position: relative;
+    min-height: 245px;
+    padding: 27px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--white);
+    overflow: hidden;
+    box-shadow: 0 10px 28px rgba(10,25,47,.055);
+    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+
+.channel-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: var(--gold);
+    transition: width .35s ease;
+}
+
+.channel-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(212,175,55,.48);
+    box-shadow: var(--shadow-md);
+}
+
+.channel-card:hover::before {
+    width: 100%;
+}
+
+.channel-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 9px;
+    display: grid;
+    place-items: center;
+    background: var(--navy);
+    color: var(--gold);
+    transition: background .25s ease, transform .25s ease;
+}
+
+.channel-card:hover .channel-icon {
+    background: var(--crimson);
+    transform: scale(1.05);
+}
+
+.channel-label {
+    display: block;
+    margin-top: 22px;
+    color: var(--crimson);
+    font-size: .65rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.channel-card h3 {
+    margin-top: 5px;
+    color: var(--navy);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.35rem;
+    line-height: 1.2;
+}
+
+.channel-card p {
+    margin-top: 9px;
+    color: var(--slate);
+    font-size: .82rem;
+}
+
+.channel-link {
+    margin-top: 18px;
+    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--navy);
+    font-size: .76rem;
+    font-weight: 800;
+    transition: color .2s ease, gap .2s ease;
+}
+
+.channel-link:hover {
+    gap: 10px;
+    color: var(--crimson);
+}
+
+.contact-main {
+    padding: 105px 0;
+    background: var(--surface);
+    border-block: 1px solid var(--border);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.08fr .92fr;
+    gap: 58px;
+    align-items: start;
+}
+
+.form-card {
+    padding: 36px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+}
+
+.form-card-header {
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--border);
+}
+
+.form-card-header h2 {
+    color: var(--navy);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2rem, 4vw, 2.9rem);
+    line-height: 1.12;
+}
+
+.form-card-header p {
+    margin-top: 10px;
+    color: var(--slate);
+    font-size: .9rem;
+}
+
+.inquiry-form {
+    margin-top: 28px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.field {
+    min-width: 0;
+}
+
+.field.full {
+    grid-column: 1 / -1;
+}
+
+.field label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 7px;
+    color: var(--navy);
+    font-size: .75rem;
+    font-weight: 800;
+}
+
+.required {
+    color: var(--crimson);
+}
+
+.input-wrap {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+    color: var(--muted);
+    pointer-events: none;
+    transition: color .2s ease;
+}
+
+.input-wrap.textarea-wrap .input-icon {
+    top: 16px;
+    transform: none;
+}
+
+.form-control {
+    width: 100%;
+    min-height: 50px;
+    padding: 0 14px 0 44px;
+    border: 1px solid #D5DDE6;
+    border-radius: 8px;
+    outline: none;
+    background: #FCFDFE;
+    color: var(--charcoal);
+    transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+textarea.form-control {
+    min-height: 135px;
+    padding: 13px 14px 13px 44px;
+    resize: vertical;
+}
+
+select.form-control {
+    appearance: none;
+    cursor: pointer;
+    padding-right: 38px;
+}
+
+.select-arrow {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--slate);
+    pointer-events: none;
+}
+
+.form-control:focus {
+    background: var(--white);
+    border-color: var(--gold);
+    box-shadow: 0 0 0 4px rgba(212,175,55,.12);
+}
+
+.input-wrap:focus-within .input-icon {
+    color: var(--gold);
+}
+
+.field.valid .form-control {
+    border-color: rgba(31,110,82,.55);
+}
+
+.field.invalid .form-control {
+    border-color: rgba(180,35,24,.75);
+    box-shadow: 0 0 0 3px rgba(180,35,24,.08);
+}
+
+.error-text {
+    min-height: 18px;
+    margin-top: 6px;
+    color: var(--danger);
+    font-size: .68rem;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(-3px);
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+.field.invalid .error-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.form-meta {
+    margin-top: 9px;
+    color: var(--muted);
+    font-size: .68rem;
+}
+
+.submit-row {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.submit-row .btn {
+    min-width: 190px;
+}
+
+.submit-note {
+    color: var(--slate);
+    font-size: .72rem;
+    max-width: 310px;
+}
+
+.visit-panel {
+    position: sticky;
+    top: 110px;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background: var(--navy);
+    color: var(--white);
+    box-shadow: var(--shadow-lg);
+}
+
+.visit-head {
+    position: relative;
+    padding: 34px;
+    border-bottom: 1px solid rgba(255,255,255,.11);
+}
+
+.visit-head::before {
+    content: "";
+    position: absolute;
+    left: 34px;
+    bottom: -1px;
+    width: 90px;
+    height: 2px;
+    background: var(--gold);
+}
+
+.visit-head small {
+    color: var(--gold);
+    font-size: .67rem;
+    font-weight: 800;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+}
+
+.visit-head h3 {
+    margin-top: 8px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2rem, 4vw, 2.7rem);
+    line-height: 1.12;
+}
+
+.visit-head p {
+    margin-top: 12px;
+    color: #C5D1DF;
+    font-size: .86rem;
+}
+
+.visit-body {
+    padding: 30px 34px 35px;
+}
+
+.visit-list {
+    display: grid;
+    gap: 18px;
+    list-style: none;
+}
+
+.visit-item {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 13px;
+    align-items: start;
+}
+
+.visit-item-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    background: rgba(212,175,55,.11);
+    color: var(--gold);
+}
+
+.visit-item strong {
+    display: block;
+    color: var(--white);
+    font-size: .86rem;
+}
+
+.visit-item span {
+    display: block;
+    margin-top: 3px;
+    color: #AEBCCC;
+    font-size: .78rem;
+}
+
+.hours-table {
+    margin-top: 27px;
+    border-top: 1px solid rgba(255,255,255,.11);
+    padding-top: 22px;
+    display: grid;
+    gap: 10px;
+}
+
+.hours-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    color: #C9D5E2;
+    font-size: .78rem;
+}
+
+.hours-row strong {
+    color: var(--white);
+}
+
+.visit-actions {
+    margin-top: 26px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+}
+
+.visit-actions .btn-secondary {
+    background: rgba(255,255,255,.06);
+    color: var(--white);
+    border-color: rgba(255,255,255,.18);
+    box-shadow: none;
+}
+
+.visit-actions .btn-secondary:hover {
+    border-color: var(--gold);
+    background: rgba(255,255,255,.1);
+}
+
+.faq {
+    padding: 105px 0;
+    background: var(--ivory);
+}
+
+.faq-grid {
+    margin-top: 42px;
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 55px;
+    align-items: start;
+}
+
+.faq-intro {
+    position: sticky;
+    top: 118px;
+}
+
+.faq-intro-box {
+    margin-top: 24px;
+    padding: 26px;
+    border-left: 3px solid var(--gold);
+    background: var(--surface);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.faq-intro-box strong {
+    display: block;
+    color: var(--navy);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.2rem;
+}
+
+.faq-intro-box p {
+    margin-top: 8px;
+    color: var(--slate);
+    font-size: .83rem;
+}
+
+.faq-list {
+    display: grid;
+    gap: 11px;
+}
+
+.faq-item {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--white);
+    transition: border-color .25s ease, box-shadow .25s ease;
+}
+
+.faq-item.open {
+    border-color: rgba(212,175,55,.55);
+    box-shadow: var(--shadow-sm);
+}
+
+.faq-question {
+    width: 100%;
+    min-height: 72px;
+    padding: 17px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    background: transparent;
+    color: var(--navy);
+    cursor: pointer;
+    text-align: left;
+    font-size: .9rem;
+    font-weight: 800;
+}
+
+.faq-toggle {
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--surface);
+    color: var(--navy);
+    transition: background .25s ease, color .25s ease, transform .25s ease;
+}
+
+.faq-item.open .faq-toggle {
+    background: var(--navy);
+    color: var(--gold);
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .38s ease;
+}
+
+.faq-answer-inner {
+    padding: 0 20px 20px;
+    color: var(--slate);
+    font-size: .84rem;
+}
+
+.map-section {
+    padding: 105px 0;
+    background: var(--surface);
+    border-block: 1px solid var(--border);
+}
+
+.map-shell {
+    margin-top: 42px;
+    display: grid;
+    grid-template-columns: 1.25fr .75fr;
+    min-height: 540px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--white);
+    box-shadow: var(--shadow-md);
+}
+
+.map-canvas {
+    position: relative;
+    overflow: hidden;
+    min-height: 540px;
+    background:
+        linear-gradient(rgba(231,236,242,.75), rgba(231,236,242,.75)),
+        repeating-linear-gradient(0deg, transparent 0 51px, rgba(10,25,47,.08) 51px 53px),
+        repeating-linear-gradient(90deg, transparent 0 68px, rgba(10,25,47,.07) 68px 70px);
+}
+
+.road {
+    position: absolute;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 1px rgba(10,25,47,.04);
+}
+
+.road.horizontal {
+    left: -5%;
+    right: -5%;
+    height: 46px;
+}
+
+.road.horizontal.one {
+    top: 24%;
+    transform: rotate(-4deg);
+}
+
+.road.horizontal.two {
+    top: 62%;
+    transform: rotate(5deg);
+}
+
+.road.vertical {
+    top: -10%;
+    bottom: -10%;
+    width: 42px;
+}
+
+.road.vertical.one {
+    left: 28%;
+    transform: rotate(8deg);
+}
+
+.road.vertical.two {
+    right: 24%;
+    transform: rotate(-7deg);
+}
+
+.park {
+    position: absolute;
+    width: 145px;
+    height: 105px;
+    border-radius: 26px 12px 28px 18px;
+    background: #D8E7D8;
+    border: 1px solid #C5D7C5;
+}
+
+.park.one {
+    left: 8%;
+    bottom: 12%;
+}
+
+.park.two {
+    right: 8%;
+    top: 12%;
+    width: 115px;
+    height: 84px;
+}
+
+.map-building {
+    position: absolute;
+    width: 140px;
+    height: 96px;
+    border-radius: 9px;
+    background: #C9D2DC;
+    border: 1px solid #B8C3CF;
+}
+
+.map-building.one {
+    left: 13%;
+    top: 34%;
+}
+
+.map-building.two {
+    right: 12%;
+    bottom: 19%;
+    width: 110px;
+    height: 82px;
+}
+
+.map-building.three {
+    left: 45%;
+    bottom: 10%;
+    width: 95px;
+    height: 68px;
+}
+
+.map-marker {
+    position: absolute;
+    z-index: 8;
+    top: 46%;
+    left: 53%;
+    width: 62px;
+    height: 62px;
+    border-radius: 50% 50% 50% 0;
+    display: grid;
+    place-items: center;
+    background: var(--crimson);
+    color: var(--white);
+    transform: translate(-50%, -50%) rotate(-45deg);
+    box-shadow: 0 16px 32px rgba(139,0,0,.28);
+    animation: markerPulse 2.4s ease-in-out infinite;
+}
+
+.map-marker .icon {
+    width: 24px;
+    height: 24px;
+    transform: rotate(45deg);
+}
+
+.map-label {
+    position: absolute;
+    z-index: 9;
+    left: 53%;
+    top: calc(46% + 48px);
+    transform: translateX(-50%);
+    min-width: 190px;
+    padding: 9px 12px;
+    border-radius: 8px;
+    background: var(--navy);
+    color: var(--white);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    font-size: .72rem;
+    font-weight: 800;
+}
+
+.map-control {
+    position: absolute;
+    z-index: 10;
+    top: 18px;
+    right: 18px;
+    display: grid;
+    gap: 7px;
+}
+
+.map-control button {
+    width: 38px;
+    height: 38px;
+    border-radius: 7px;
+    display: grid;
+    place-items: center;
+    background: var(--white);
+    color: var(--navy);
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.map-control button:hover {
+    background: var(--navy);
+    color: var(--gold);
+}
+
+.map-info {
+    padding: 38px 34px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--navy);
+    color: var(--white);
+}
+
+.map-info small {
+    color: var(--gold);
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+}
+
+.map-info h3 {
+    margin-top: 8px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.12;
+}
+
+.map-info p {
+    margin-top: 13px;
+    color: #C5D1DF;
+    font-size: .87rem;
+}
+
+.route-list {
+    margin-top: 25px;
+    display: grid;
+    gap: 11px;
+    list-style: none;
+}
+
+.route-list li {
+    display: grid;
+    grid-template-columns: 29px 1fr;
+    gap: 10px;
+    align-items: start;
+    color: #D5DFEA;
+    font-size: .8rem;
+}
+
+.route-list span {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: rgba(212,175,55,.12);
+    color: var(--gold);
+    font-size: .66rem;
+    font-weight: 800;
+}
+
+.map-actions {
+    margin-top: 27px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+}
+
+.map-actions .btn-secondary {
+    background: rgba(255,255,255,.06);
+    color: var(--white);
+    border-color: rgba(255,255,255,.18);
+    box-shadow: none;
+}
+
+.map-actions .btn-secondary:hover {
+    border-color: var(--gold);
+    background: rgba(255,255,255,.1);
+}
+
+.footer {
+    padding-top: 70px;
+    background: var(--navy-deep);
+    color: #CBD5E1;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr .7fr .7fr 1fr;
+    gap: 52px;
+    padding-bottom: 55px;
+}
+
+.footer .brand-text strong {
+    color: var(--white);
+}
+
+.footer .brand-text small {
+    color: #94A3B8;
+}
+
+.footer-about {
+    max-width: 390px;
+    margin-top: 20px;
+    color: #94A3B8;
+    font-size: .86rem;
+}
+
+.footer-socials {
+    margin-top: 24px;
+    display: flex;
+    gap: 9px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 7px;
+    display: grid;
+    place-items: center;
+    color: #D9E2EC;
+    transition: .25s ease;
+}
+
+.social-link:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--navy);
+    transform: translateY(-2px);
+}
+
+.footer-title {
+    margin-bottom: 18px;
+    color: var(--white);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.12rem;
+}
+
+.footer-links {
+    display: grid;
+    gap: 10px;
+}
+
+.footer-links a {
+    width: fit-content;
+    color: #94A3B8;
+    font-size: .83rem;
+    transition: .2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+    transform: translateX(3px);
+}
+
+.footer-contact {
+    display: grid;
+    gap: 15px;
+}
+
+.footer-contact-item {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 10px;
+    color: #94A3B8;
+    font-size: .82rem;
+}
+
+.footer-contact-item .icon {
+    width: 17px;
+    color: var(--gold);
+}
+
+.footer-bottom {
+    min-height: 72px;
+    border-top: 1px solid rgba(255,255,255,.09);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    color: #7F8DA0;
+    font-size: .75rem;
+}
+
+.footer-bottom-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-bottom-links a:hover {
+    color: var(--gold);
+}
+
+.success-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    padding: 20px;
+    display: grid;
+    place-items: center;
+    background: rgba(7,18,33,.76);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .28s ease, visibility .28s ease;
+}
+
+.success-modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.success-card {
+    width: min(100%, 500px);
+    padding: 38px 34px 34px;
+    border-radius: var(--radius-md);
+    background: var(--white);
+    text-align: center;
+    box-shadow: 0 38px 100px rgba(0,0,0,.32);
+    transform: translateY(20px) scale(.97);
+    transition: transform .3s ease;
+}
+
+.success-modal.open .success-card {
+    transform: translateY(0) scale(1);
+}
+
+.success-icon {
+    width: 76px;
+    height: 76px;
+    margin-inline: auto;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: rgba(31,110,82,.1);
+    color: var(--success);
+    border: 1px solid rgba(31,110,82,.2);
+    transform: scale(.75);
+    transition: transform .4s cubic-bezier(.2,.8,.2,1);
+}
+
+.success-modal.open .success-icon {
+    transform: scale(1);
+}
+
+.success-icon .icon {
+    width: 34px;
+    height: 34px;
+}
+
+.success-card small {
+    display: block;
+    margin-top: 20px;
+    color: var(--crimson);
+    font-size: .68rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .13em;
+}
+
+.success-card h3 {
+    margin-top: 7px;
+    color: var(--navy);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 2rem;
+    line-height: 1.14;
+}
+
+.success-card p {
+    margin-top: 13px;
+    color: var(--slate);
+    font-size: .87rem;
+}
+
+.success-card .btn {
+    margin-top: 24px;
+}
+
+.back-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 850;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--navy);
+    color: var(--white);
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: .25s ease;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--crimson);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .7s ease, transform .7s cubic-bezier(.22,.7,.24,1);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-38px);
+    transition: opacity .75s ease, transform .75s cubic-bezier(.22,.7,.24,1);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(38px);
+    transition: opacity .75s ease, transform .75s cubic-bezier(.22,.7,.24,1);
+}
+
+.scale-reveal {
+    opacity: 0;
+    transform: scale(.965);
+    transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible,
+.reveal-left.visible,
+.reveal-right.visible,
+.scale-reveal.visible {
+    opacity: 1;
+    transform: translate(0) scale(1);
+}
+
+.stagger > * {
+    transition-delay: calc(var(--i, 0) * 85ms);
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes markerPulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(-45deg) scale(1.06);
+    }
+}
+
+@media (max-width: 1120px) {
+    .channels-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1.4fr .75fr .75fr;
+    }
+
+    .footer-col:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 980px) {
+    .topbar-inner {
+        justify-content: center;
+    }
+
+    .topbar-right {
+        display: none;
+    }
+
+    .nav-links {
+        position: fixed;
+        z-index: 1100;
+        top: 0;
+        right: 0;
+        width: min(84vw, 360px);
+        height: 100dvh;
+        padding: 104px 28px 35px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        background: var(--ivory);
+        box-shadow: -20px 0 55px rgba(10,25,47,.17);
+        transform: translateX(105%);
+        transition: transform .35s cubic-bezier(.22,.75,.2,1);
+    }
+
+    .nav-links.open {
+        transform: translateX(0);
+    }
+
+    .nav-links > a:not(.portal-btn) {
+        padding: 14px 4px;
+        border-bottom: 1px solid var(--border);
+        font-size: 1rem;
+    }
+
+    .nav-links > a:not(.portal-btn)::after {
+        display: none;
+    }
+
+    .portal-btn {
+        min-height: 50px;
+        margin: 18px 0 0;
+        justify-content: center;
+    }
+
+    .menu-toggle {
+        position: relative;
+        z-index: 1200;
+        display: flex;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .visit-panel {
+        position: relative;
+        top: auto;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .faq-intro {
+        position: relative;
+        top: auto;
+    }
+
+    .map-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .map-canvas,
+    .map-shell {
+        min-height: 470px;
+    }
+}
+
+@media (max-width: 740px) {
+    .container {
+        width: min(calc(100% - 28px), var(--container));
+    }
+
+    .topbar {
+        font-size: .69rem;
+    }
+
+    .topbar-group {
+        justify-content: center;
+        gap: 11px;
+    }
+
+    .topbar-item:nth-child(2) {
+        display: none;
+    }
+
+    .navbar {
+        min-height: 70px;
+    }
+
+    .brand-mark {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-text strong {
+        font-size: 1rem;
+    }
+
+    .brand-text small {
+        font-size: .53rem;
+    }
+
+    .page-hero {
+        min-height: 465px;
+    }
+
+    .hero-inner {
+        padding: 72px 0 80px;
+    }
+
+    .hero-title {
+        font-size: clamp(2.8rem, 13vw, 4.5rem);
+    }
+
+    .channels,
+    .contact-main,
+    .faq,
+    .map-section {
+        padding: 78px 0;
+    }
+
+    .channels-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .channel-card {
+        min-height: auto;
+    }
+
+    .form-card {
+        padding: 28px 22px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .field.full {
+        grid-column: auto;
+    }
+
+    .visit-head,
+    .visit-body {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .visit-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .map-info {
+        padding: 32px 24px;
+    }
+
+    .map-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 38px 24px;
+    }
+
+    .footer-col:first-child,
+    .footer-col:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        padding: 20px 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .submit-row {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .submit-row .btn {
+        width: 100%;
+    }
+
+    .faq-question {
+        min-height: 66px;
+        padding: 15px 16px;
+    }
+
+    .faq-answer-inner {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .map-canvas,
+    .map-shell {
+        min-height: 410px;
+    }
+
+    .map-marker {
+        width: 54px;
+        height: 54px;
+    }
+
+    .map-label {
+        min-width: 165px;
+        font-size: .66rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-col,
+    .footer-col:first-child,
+    .footer-col:last-child {
+        grid-column: auto;
+    }
+
+    .success-card {
+        padding: 32px 22px 28px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+    <div class="container topbar-inner">
+        <div class="topbar-group">
+            <span class="topbar-item">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>
+                Admissions Helpline: <strong>+91 98765 43210</strong>
+            </span>
+            <span class="topbar-item">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+                admissions@devxinstitute.in
+            </span>
+        </div>
+
+        <div class="topbar-group topbar-right">
+            <span class="topbar-item">
+                <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                Admissions Desk: Mon–Sat, 8:00 AM–7:00 PM
+            </span>
+            <span class="topbar-item"><strong>Admissions Open 2026</strong></span>
+        </div>
+    </div>
+</div>
+
+<header class="header" id="header">
+    <div class="container navbar">
+        <a href="index.html" class="brand" aria-label="DevX Computer Institute home">
+            <span class="brand-mark">DX</span>
+            <span class="brand-text">
+                <strong>DevX</strong>
+                <small>Computer Institute</small>
+            </span>
+        </a>
+
+        <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="design.html">Design</a>
+            <a href="contact.html" class="active">Contact</a>
+            <a href="login.html" class="portal-btn">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/></svg>
+                Student Portal
+            </a>
+        </nav>
+
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<main>
+
+<section class="page-hero">
+    <div class="container hero-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>Contact Us</span>
+        </nav>
+
+        <h1 class="hero-title">Connect with <em>DevX Admissions</em></h1>
+
+        <p class="hero-copy">
+            Speak with our academic counseling team about courses, batch timings, eligibility, practical labs, certifications, placement support or campus visits. We will help you identify a clear next step.
+        </p>
+
+        <div class="hero-actions">
+            <a href="#inquiry" class="btn btn-primary">
+                Send an Inquiry
+                <svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+            </a>
+            <a href="#location" class="btn btn-secondary">
+                Find Our Campus
+                <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="channels">
+    <div class="container">
+        <div class="channels-grid stagger">
+            <article class="channel-card reveal" style="--i:0">
+                <div class="channel-icon">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                </div>
+                <span class="channel-label">Campus Address</span>
+                <h3>Visit DevX Academic Centre</h3>
+                <p>Main Market Road, New Delhi, India. Admissions and counseling desk available during working hours.</p>
+                <a href="#location" class="channel-link">View Location <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+            </article>
+
+            <article class="channel-card reveal" style="--i:1">
+                <div class="channel-icon">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/></svg>
+                </div>
+                <span class="channel-label">Phone & WhatsApp</span>
+                <h3>+91 98765 43210</h3>
+                <p>Contact the admissions desk for program details, batch availability, counseling appointments and campus visit support.</p>
+                <a href="tel:+919876543210" class="channel-link">Call Admissions <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+            </article>
+
+            <article class="channel-card reveal" style="--i:2">
+                <div class="channel-icon">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+                </div>
+                <span class="channel-label">Official Email</span>
+                <h3>Admissions Desk</h3>
+                <p>Send course, documentation, corporate training or certification inquiries to our official admissions team.</p>
+                <a href="mailto:admissions@devxinstitute.in" class="channel-link">Email DevX <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+            </article>
+
+            <article class="channel-card reveal" style="--i:3">
+                <div class="channel-icon">
+                    <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                </div>
+                <span class="channel-label">Office Hours</span>
+                <h3>Monday to Saturday</h3>
+                <p>Admissions and student support are available from 8:00 AM to 7:00 PM, with scheduled counseling sessions throughout the day.</p>
+                <a href="#inquiry" class="channel-link">Book Counseling <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="contact-main" id="inquiry">
+    <div class="container contact-grid">
+        <div class="form-card reveal-left">
+            <div class="form-card-header">
+                <div class="eyebrow">Academic Inquiry</div>
+                <h2>Tell Us What You Want to Learn</h2>
+                <p>Complete the form below. The live validation will help ensure your inquiry includes the information our counseling team needs.</p>
+            </div>
+
+            <form class="inquiry-form" id="contactForm" novalidate>
+                <div class="form-grid">
+                    <div class="field" data-field="name">
+                        <label for="name">Full Name <span class="required">*</span></label>
+                        <div class="input-wrap">
+                            <svg class="icon input-icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg>
+                            <input class="form-control" type="text" id="name" name="name" autocomplete="name" placeholder="Enter your full name">
+                        </div>
+                        <div class="error-text">Please enter at least 2 characters.</div>
+                    </div>
+
+                    <div class="field" data-field="email">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <div class="input-wrap">
+                            <svg class="icon input-icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+                            <input class="form-control" type="email" id="email" name="email" autocomplete="email" placeholder="name@example.com">
+                        </div>
+                        <div class="error-text">Enter a valid email address.</div>
+                    </div>
+
+                    <div class="field" data-field="phone">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <div class="input-wrap">
+                            <svg class="icon input-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/></svg>
+                            <input class="form-control" type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+91 98765 43210">
+                        </div>
+                        <div class="error-text">Enter a valid 10 to 15 digit phone number.</div>
+                    </div>
+
+                    <div class="field" data-field="course">
+                        <label for="course">Course Choice <span class="required">*</span></label>
+                        <div class="input-wrap">
+                            <svg class="icon input-icon" viewBox="0 0 24 24"><path d="m3 10 9-5 9 5-9 5z"/><path d="M7 12v5c3 2 7 2 10 0v-5"/></svg>
+                            <select class="form-control" id="course" name="course">
+                                <option value="">Select a program</option>
+                                <option>Full Stack Web Development</option>
+                                <option>Java Programming Professional</option>
+                                <option>Python & Data Analytics</option>
+                                <option>SQL & Database Management</option>
+                                <option>Cyber Security Foundations</option>
+                                <option>UI/UX & Graphic Design</option>
+                                <option>Video Editing & Motion Media</option>
+                                <option>Advanced Computer Applications</option>
+                                <option>Industrial Internship Program</option>
+                                <option>Corporate Training</option>
+                                <option>General Academic Counseling</option>
+                            </select>
+                            <svg class="icon select-arrow" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+                        </div>
+                        <div class="error-text">Please select a course or counseling option.</div>
+                    </div>
+
+                    <div class="field full" data-field="message">
+                        <label for="message">Message <span class="required">*</span></label>
+                        <div class="input-wrap textarea-wrap">
+                            <svg class="icon input-icon" viewBox="0 0 24 24"><path d="M4 4h16v13H8l-4 4z"/></svg>
+                            <textarea class="form-control" id="message" name="message" placeholder="Tell us about your learning goal, preferred batch, current skill level or questions."></textarea>
+                        </div>
+                        <div class="error-text">Please enter at least 15 characters so we can understand your inquiry.</div>
+                        <div class="form-meta"><span id="messageCount">0</span>/500 characters</div>
+                    </div>
+                </div>
+
+                <div class="submit-row">
+                    <button class="btn btn-primary" type="submit">
+                        Submit Inquiry
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                    </button>
+                    <p class="submit-note">Your form stays on this page and confirms submission without reloading.</p>
+                </div>
+            </form>
+        </div>
+
+        <aside class="visit-panel reveal-right">
+            <div class="visit-head">
+                <small>Campus Visit Desk</small>
+                <h3>Plan a Visit Before You Enroll</h3>
+                <p>Meet our academic team, understand the training environment and ask detailed questions about course structure and career pathways.</p>
+            </div>
+
+            <div class="visit-body">
+                <ul class="visit-list">
+                    <li class="visit-item">
+                        <div class="visit-item-icon">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                        </div>
+                        <div>
+                            <strong>DevX Academic Centre</strong>
+                            <span>Main Market Road, New Delhi, India</span>
+                        </div>
+                    </li>
+
+                    <li class="visit-item">
+                        <div class="visit-item-icon">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 10h6"/><path d="M9 14h6"/></svg>
+                        </div>
+                        <div>
+                            <strong>Admissions Reception</strong>
+                            <span>Ground floor counseling desk with program advisors and batch assistance.</span>
+                        </div>
+                    </li>
+
+                    <li class="visit-item">
+                        <div class="visit-item-icon">
+                            <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+                        </div>
+                        <div>
+                            <strong>Lab Tour Available</strong>
+                            <span>Ask the counselor about practical labs, design studios and development workstations.</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="hours-table">
+                    <div class="hours-row"><span>Monday–Friday</span><strong>8:00 AM–7:00 PM</strong></div>
+                    <div class="hours-row"><span>Saturday</span><strong>9:00 AM–6:00 PM</strong></div>
+                    <div class="hours-row"><span>Sunday</span><strong>By Appointment</strong></div>
+                </div>
+
+                <div class="visit-actions">
+                    <a href="tel:+919876543210" class="btn btn-gold">Call Before Visiting</a>
+                    <a href="#location" class="btn btn-secondary">View Map</a>
+                </div>
+            </div>
+        </aside>
+    </div>
+</section>
+
+<section class="faq">
+    <div class="container">
+        <div class="faq-grid">
+            <div class="faq-intro reveal-left">
+                <div class="eyebrow">Frequently Asked Questions</div>
+                <h2 class="section-title">Clear Answers Before You Start</h2>
+                <p class="section-copy">These are some of the most common questions students ask before enrollment and counseling.</p>
+
+                <div class="faq-intro-box">
+                    <strong>Still need clarity?</strong>
+                    <p>Use the inquiry form or contact the admissions desk for program-specific fees, eligibility and current batch availability.</p>
+                </div>
+            </div>
+
+            <div class="faq-list reveal-right">
+                <article class="faq-item open">
+                    <button class="faq-question" type="button" aria-expanded="true">
+                        How do I get the current course fee structure?
+                        <span class="faq-toggle">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Course fees can vary by program duration, practical lab requirements, certification components and active admission plans. Submit an inquiry or contact the admissions desk to receive the current fee structure for your selected program.</div>
+                    </div>
+                </article>
+
+                <article class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        Are morning, evening and weekend batches available?
+                        <span class="faq-toggle">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">DevX typically schedules multiple batch windows based on program demand. Morning, afternoon, evening and selected weekend options may be available. Current timings should be confirmed with admissions before enrollment.</div>
+                    </div>
+                </article>
+
+                <article class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        Can students use the practical labs outside class hours?
+                        <span class="faq-toggle">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Selected programs include additional supervised lab access or cloud-based practice environments. Exact access depends on the course, current lab schedule and institute policies.</div>
+                    </div>
+                </article>
+
+                <article class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        How does the placement support process work?
+                        <span class="faq-toggle">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Eligible students may receive resume support, portfolio review, mock interviews, aptitude preparation and employer referral assistance. Placement services depend on program completion, performance and eligibility requirements.</div>
+                    </div>
+                </article>
+
+                <article class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        Do I need previous programming experience?
+                        <span class="faq-toggle">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Many DevX programs begin at foundation level, while some intermediate tracks benefit from prior technical knowledge. A counseling discussion helps determine the most appropriate starting level.</div>
+                    </div>
+                </article>
+
+                <article class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        Can I visit the institute before taking admission?
+                        <span class="faq-toggle">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Yes. Campus visits are encouraged. You can meet a counselor, review course details and request a tour of relevant training or lab facilities during available visiting hours.</div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="map-section" id="location">
+    <div class="container">
+        <div class="reveal">
+            <div class="eyebrow">Map & Transport Assistance</div>
+            <h2 class="section-title">Find the DevX Campus with Confidence</h2>
+            <p class="section-copy">Use the interactive location preview below to explore the campus area and access quick direction options.</p>
+        </div>
+
+        <div class="map-shell scale-reveal">
+            <div class="map-canvas" id="mapCanvas">
+                <span class="road horizontal one"></span>
+                <span class="road horizontal two"></span>
+                <span class="road vertical one"></span>
+                <span class="road vertical two"></span>
+
+                <span class="park one"></span>
+                <span class="park two"></span>
+
+                <span class="map-building one"></span>
+                <span class="map-building two"></span>
+                <span class="map-building three"></span>
+
+                <div class="map-marker">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                </div>
+
+                <div class="map-label">DevX Computer Institute</div>
+
+                <div class="map-control">
+                    <button id="zoomIn" type="button" aria-label="Zoom in">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+                    </button>
+                    <button id="zoomOut" type="button" aria-label="Zoom out">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="map-info">
+                <small>Campus Location</small>
+                <h3>DevX Academic Centre</h3>
+                <p>Main Market Road, New Delhi, India. Contact admissions before your visit if you need route guidance or a scheduled counseling appointment.</p>
+
+                <ul class="route-list">
+                    <li><span>01</span>Metro and public transport connections are available from major city routes.</li>
+                    <li><span>02</span>Local auto-rickshaw and cab access is available directly to the main market area.</li>
+                    <li><span>03</span>Students arriving for counseling can request landmark guidance by phone.</li>
+                </ul>
+
+                <div class="map-actions">
+                    <a href="https://www.google.com/maps/search/?api=1&query=New+Delhi+India" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Open Directions</a>
+                    <a href="tel:+919876543210" class="btn btn-secondary">Call for Route Help</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="brand">
+                    <span class="brand-mark">DX</span>
+                    <span class="brand-text">
+                        <strong>DevX</strong>
+                        <small>Computer Institute</small>
+                    </span>
+                </a>
+
+                <p class="footer-about">Professional computer education focused on practical skill, academic discipline, technical confidence and career readiness.</p>
+
+                <div class="footer-socials">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v2"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="YouTube">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M22 12s0-4-1-6c-.5-1-1.5-1.5-2.5-1.7C16.5 4 12 4 12 4s-4.5 0-6.5.3C4.5 4.5 3.5 5 3 6c-1 2-1 6-1 6s0 4 1 6c.5 1 1.5 1.5 2.5 1.7C7.5 20 12 20s4.5 0 6.5-.3c1-.2 2-.7 2.5-1.7 1-2 1-6 1-6z"/><path d="m10 9 5 3-5 3z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Institute</h3>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Courses</a>
+                    <a href="design.html">Design Showcase</a>
+                    <a href="contact.html">Admissions</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Student Links</h3>
+                <div class="footer-links">
+                    <a href="login.html">Student Portal</a>
+                    <a href="services.html">Course Syllabus</a>
+                    <a href="contact.html">Academic Counseling</a>
+                    <a href="contact.html">Student Support</a>
+                    <a href="contact.html">Certificate Query</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Visit DevX</h3>
+                <div class="footer-contact">
+                    <div class="footer-contact-item">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                        <span>DevX Academic Centre, Main Market Road, New Delhi, India</span>
+                    </div>
+
+                    <div class="footer-contact-item">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/></svg>
+                        <span>+91 98765 43210</span>
+                    </div>
+
+                    <div class="footer-contact-item">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+                        <span>admissions@devxinstitute.in</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© <span id="currentYear"></span> DevX Computer Institute. All rights reserved.</span>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="success-modal" id="successModal" aria-hidden="true">
+    <div class="success-card" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+        <div class="success-icon">
+            <svg class="icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>
+        </div>
+        <small>Inquiry Submitted</small>
+        <h3 id="successTitle">Thank You for Contacting DevX</h3>
+        <p>Your inquiry has been validated and submitted successfully. Our admissions team can now review your course interest and contact details.</p>
+        <button class="btn btn-primary" id="successClose" type="button">Close Confirmation</button>
+    </div>
+</div>
+
+<button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+    <svg class="icon" viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"/></svg>
+</button>
+
+<script>
+const header = document.getElementById("header")
+const menuToggle = document.getElementById("menuToggle")
+const navLinks = document.getElementById("navLinks")
+const mobileOverlay = document.getElementById("mobileOverlay")
+const backToTop = document.getElementById("backToTop")
+const contactForm = document.getElementById("contactForm")
+const nameInput = document.getElementById("name")
+const emailInput = document.getElementById("email")
+const phoneInput = document.getElementById("phone")
+const courseInput = document.getElementById("course")
+const messageInput = document.getElementById("message")
+const messageCount = document.getElementById("messageCount")
+const successModal = document.getElementById("successModal")
+const successClose = document.getElementById("successClose")
+const mapCanvas = document.getElementById("mapCanvas")
+const zoomIn = document.getElementById("zoomIn")
+const zoomOut = document.getElementById("zoomOut")
+let previousFocus = null
+let mapScale = 1
+
+const updateHeader = () => {
+    header.classList.toggle("scrolled", window.scrollY > 24)
+    backToTop.classList.toggle("show", window.scrollY > 650)
+}
+
+window.addEventListener("scroll", updateHeader, { passive: true })
+updateHeader()
+
+const setMenu = open => {
+    menuToggle.classList.toggle("active", open)
+    navLinks.classList.toggle("open", open)
+    mobileOverlay.classList.toggle("active", open)
+    document.body.classList.toggle("menu-open", open)
+    menuToggle.setAttribute("aria-expanded", String(open))
+}
+
+menuToggle.addEventListener("click", () => {
+    setMenu(!navLinks.classList.contains("open"))
+})
+
+mobileOverlay.addEventListener("click", () => {
+    setMenu(false)
+})
+
+navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => setMenu(false))
+})
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 980) setMenu(false)
+})
+
+backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+})
+
+const revealElements = document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .scale-reveal")
+
+const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible")
+            revealObserver.unobserve(entry.target)
+        }
+    })
+}, {
+    threshold: .12,
+    rootMargin: "0px 0px -35px 0px"
+})
+
+revealElements.forEach(element => revealObserver.observe(element))
+
+const validators = {
+    name: value => value.trim().length >= 2,
+    email: value => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(value.trim()),
+    phone: value => {
+        const digits = value.replace(/\D/g, "")
+        return digits.length >= 10 && digits.length <= 15
+    },
+    course: value => value.trim() !== "",
+    message: value => value.trim().length >= 15 && value.trim().length <= 500
+}
+
+const fieldMap = {
+    name: nameInput,
+    email: emailInput,
+    phone: phoneInput,
+    course: courseInput,
+    message: messageInput
+}
+
+const validateField = key => {
+    const input = fieldMap[key]
+    const field = input.closest(".field")
+    const valid = validators[key](input.value)
+
+    field.classList.toggle("valid", valid)
+    field.classList.toggle("invalid", !valid)
+
+    return valid
+}
+
+Object.entries(fieldMap).forEach(([key, input]) => {
+    input.addEventListener("input", () => {
+        validateField(key)
+
+        if (key === "message") {
+            if (input.value.length > 500) {
+                input.value = input.value.slice(0, 500)
+            }
+
+            messageCount.textContent = input.value.length
+        }
+    })
+
+    input.addEventListener("change", () => validateField(key))
+    input.addEventListener("blur", () => validateField(key))
+})
+
+messageCount.textContent = messageInput.value.length
+
+const openSuccess = () => {
+    previousFocus = document.activeElement
+    successModal.classList.add("open")
+    successModal.setAttribute("aria-hidden", "false")
+    document.body.classList.add("modal-open")
+
+    setTimeout(() => successClose.focus(), 60)
+}
+
+const closeSuccess = () => {
+    successModal.classList.remove("open")
+    successModal.setAttribute("aria-hidden", "true")
+    document.body.classList.remove("modal-open")
+
+    if (previousFocus) previousFocus.focus()
+}
+
+contactForm.addEventListener("submit", event => {
+    event.preventDefault()
+
+    const results = Object.keys(fieldMap).map(validateField)
+    const formValid = results.every(Boolean)
+
+    if (!formValid) {
+        const firstInvalid = contactForm.querySelector(".field.invalid .form-control")
+
+        if (firstInvalid) {
+            firstInvalid.focus()
+            firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" })
+        }
+
+        return
+    }
+
+    openSuccess()
+
+    contactForm.reset()
+    messageCount.textContent = "0"
+
+    contactForm.querySelectorAll(".field").forEach(field => {
+        field.classList.remove("valid", "invalid")
+    })
+})
+
+successClose.addEventListener("click", closeSuccess)
+
+successModal.addEventListener("click", event => {
+    if (event.target === successModal) {
+        closeSuccess()
+    }
+})
+
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+        if (successModal.classList.contains("open")) {
+            closeSuccess()
+        } else if (navLinks.classList.contains("open")) {
+            setMenu(false)
+        }
+    }
+})
+
+document.querySelectorAll(".faq-item").forEach(item => {
+    const button = item.querySelector(".faq-question")
+    const answer = item.querySelector(".faq-answer")
+
+    if (item.classList.contains("open")) {
+        answer.style.maxHeight = `${answer.scrollHeight}px`
+    }
+
+    button.addEventListener("click", () => {
+        const isOpen = item.classList.contains("open")
+
+        document.querySelectorAll(".faq-item").forEach(otherItem => {
+            if (otherItem !== item) {
+                otherItem.classList.remove("open")
+                otherItem.querySelector(".faq-question").setAttribute("aria-expanded", "false")
+                otherItem.querySelector(".faq-answer").style.maxHeight = null
+            }
+        })
+
+        item.classList.toggle("open", !isOpen)
+        button.setAttribute("aria-expanded", String(!isOpen))
+
+        if (isOpen) {
+            answer.style.maxHeight = null
+        } else {
+            answer.style.maxHeight = `${answer.scrollHeight}px`
+        }
+    })
+})
+
+const updateMapZoom = () => {
+    const zoomables = mapCanvas.querySelectorAll(".road, .park, .map-building, .map-marker, .map-label")
+
+    zoomables.forEach(element => {
+        element.style.transition = "transform .3s ease"
+    })
+
+    const centerX = "50%"
+    const centerY = "50%"
+
+    mapCanvas.style.transformOrigin = `${centerX} ${centerY}`
+
+    const marker = mapCanvas.querySelector(".map-marker")
+    const label = mapCanvas.querySelector(".map-label")
+
+    mapCanvas.querySelectorAll(".road, .park, .map-building").forEach(element => {
+        element.style.scale = mapScale
+    })
+
+    marker.style.scale = mapScale
+    label.style.scale = mapScale
+}
+
+zoomIn.addEventListener("click", () => {
+    mapScale = Math.min(1.18, +(mapScale + .06).toFixed(2))
+    updateMapZoom()
+})
+
+zoomOut.addEventListener("click", () => {
+    mapScale = Math.max(.88, +(mapScale - .06).toFixed(2))
+    updateMapZoom()
+})
+
+document.querySelectorAll(".social-link[href='#']").forEach(link => {
+    link.addEventListener("click", event => event.preventDefault())
+})
+
+document.getElementById("currentYear").textContent = new Date().getFullYear()
+</script>
+
+</body>
+</html>

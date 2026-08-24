@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0A192F">
+<meta name="description" content="Secure student, faculty and administrative portal access for DevX Computer Institute.">
+<title>Portal Login | DevX Computer Institute</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+
+:root {
+    --navy: #0A192F;
+    --navy-deep: #071221;
+    --navy-soft: #12243F;
+    --ivory: #F8F9FA;
+    --white: #FFFFFF;
+    --charcoal: #1E293B;
+    --slate: #64748B;
+    --muted: #94A3B8;
+    --crimson: #8B0000;
+    --crimson-dark: #650000;
+    --gold: #D4AF37;
+    --gold-light: #E6C95E;
+    --border: #E2E8F0;
+    --surface: #F1F4F7;
+    --success: #1F6E52;
+    --danger: #B42318;
+    --shadow-sm: 0 10px 28px rgba(10,25,47,.07);
+    --shadow-md: 0 22px 52px rgba(10,25,47,.13);
+    --shadow-lg: 0 36px 90px rgba(10,25,47,.2);
+    --radius-sm: 8px;
+    --radius-md: 18px;
+    --radius-lg: 28px;
+    --container: 1180px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    background:
+        linear-gradient(rgba(248,249,250,.94), rgba(248,249,250,.98)),
+        linear-gradient(135deg, rgba(212,175,55,.06), transparent 45%);
+    color: var(--charcoal);
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    border: 0;
+}
+
+svg {
+    display: block;
+}
+
+.container {
+    width: min(calc(100% - 36px), var(--container));
+    margin-inline: auto;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.top-header {
+    flex: 0 0 auto;
+    background: rgba(248,249,250,.96);
+    border-bottom: 1px solid rgba(10,25,47,.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.header-inner {
+    min-height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.brand-mark {
+    width: 45px;
+    height: 45px;
+    flex: 0 0 45px;
+    border-radius: 7px;
+    border: 1px solid rgba(212,175,55,.78);
+    display: grid;
+    place-items: center;
+    background: var(--navy);
+    color: var(--gold);
+    box-shadow: inset 0 0 0 4px rgba(212,175,55,.07);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.08rem;
+    font-weight: 800;
+}
+
+.brand-text {
+    min-width: 0;
+    display: grid;
+    line-height: 1.05;
+}
+
+.brand-text strong {
+    overflow: hidden;
+    color: var(--navy);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.16rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.brand-text small {
+    margin-top: 5px;
+    color: var(--slate);
+    font-size: .57rem;
+    font-weight: 700;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+}
+
+.back-home {
+    min-height: 42px;
+    padding: 0 15px;
+    border-radius: 7px;
+    border: 1px solid rgba(10,25,47,.15);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--white);
+    color: var(--navy);
+    box-shadow: var(--shadow-sm);
+    font-size: .79rem;
+    font-weight: 800;
+    transition: transform .22s ease, border-color .22s ease, color .22s ease;
+}
+
+.back-home:hover {
+    transform: translateY(-1px);
+    border-color: var(--gold);
+    color: var(--crimson);
+}
+
+.portal-main {
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 28px 0;
+}
+
+.auth-shell {
+    width: 100%;
+    display: grid;
+    grid-template-columns: .88fr 1.12fr;
+    overflow: hidden;
+    border: 1px solid rgba(10,25,47,.1);
+    border-radius: var(--radius-lg);
+    background: var(--white);
+    box-shadow: var(--shadow-lg);
+}
+
+.info-panel {
+    position: relative;
+    min-width: 0;
+    padding: 36px;
+    overflow: hidden;
+    background: var(--navy);
+    color: var(--white);
+}
+
+.info-panel::before {
+    content: "";
+    position: absolute;
+    inset: 15px;
+    border: 1px solid rgba(212,175,55,.23);
+    border-radius: 20px;
+    pointer-events: none;
+}
+
+.info-panel::after {
+    content: "";
+    position: absolute;
+    right: -90px;
+    bottom: -90px;
+    width: 240px;
+    height: 240px;
+    border: 1px solid rgba(212,175,55,.15);
+    transform: rotate(45deg);
+}
+
+.crest {
+    position: relative;
+    z-index: 2;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    border: 1px solid rgba(212,175,55,.7);
+    outline: 5px double rgba(212,175,55,.24);
+    outline-offset: 5px;
+    display: grid;
+    place-items: center;
+    color: var(--gold);
+    background: rgba(255,255,255,.03);
+}
+
+.crest-inner {
+    display: grid;
+    place-items: center;
+    gap: 4px;
+}
+
+.crest-inner strong {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.22rem;
+    letter-spacing: .04em;
+}
+
+.crest-inner small {
+    font-size: .48rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.info-title {
+    position: relative;
+    z-index: 2;
+    margin-top: 30px;
+}
+
+.info-title small {
+    color: var(--gold);
+    font-size: .66rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.info-title h1 {
+    margin-top: 7px;
+    max-width: 420px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.08;
+    letter-spacing: -.035em;
+}
+
+.info-title p {
+    margin-top: 13px;
+    max-width: 420px;
+    color: #C7D2E0;
+    font-size: .86rem;
+}
+
+.notice-board {
+    position: relative;
+    z-index: 2;
+    margin-top: 26px;
+    display: grid;
+    gap: 10px;
+}
+
+.notice-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    color: #DCE5EE;
+    font-size: .72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+.live-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--gold);
+    font-size: .62rem;
+}
+
+.live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--gold);
+    animation: livePulse 1.8s ease-in-out infinite;
+}
+
+.notice-item {
+    padding: 13px 14px;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 9px;
+    background: rgba(255,255,255,.045);
+    transition: border-color .22s ease, transform .22s ease, background .22s ease;
+}
+
+.notice-item:hover {
+    transform: translateX(3px);
+    border-color: rgba(212,175,55,.38);
+    background: rgba(255,255,255,.065);
+}
+
+.notice-item strong {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--white);
+    font-size: .78rem;
+}
+
+.notice-item strong .icon {
+    width: 16px;
+    height: 16px;
+    color: var(--gold);
+}
+
+.notice-item span {
+    display: block;
+    margin-top: 4px;
+    color: #AEBBCB;
+    font-size: .7rem;
+}
+
+.helpdesk {
+    position: relative;
+    z-index: 2;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,.11);
+}
+
+.helpdesk-label {
+    color: var(--gold);
+    font-size: .64rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.helpdesk-links {
+    margin-top: 11px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.helpdesk-link {
+    min-height: 36px;
+    padding: 0 11px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,.12);
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #DEE7F0;
+    font-size: .7rem;
+    font-weight: 700;
+    transition: .2s ease;
+}
+
+.helpdesk-link:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.helpdesk-link .icon {
+    width: 15px;
+    height: 15px;
+}
+
+.auth-panel {
+    min-width: 0;
+    padding: 36px 42px;
+    background: var(--white);
+}
+
+.auth-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.auth-heading-copy small {
+    color: var(--crimson);
+    font-size: .66rem;
+    font-weight: 800;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+}
+
+.auth-heading-copy h2 {
+    margin-top: 6px;
+    color: var(--navy);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(1.9rem, 4vw, 2.75rem);
+    line-height: 1.1;
+}
+
+.auth-heading-copy p {
+    max-width: 500px;
+    margin-top: 9px;
+    color: var(--slate);
+    font-size: .82rem;
+}
+
+.security-badge {
+    flex: 0 0 auto;
+    min-width: 145px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(212,175,55,.32);
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    background: rgba(212,175,55,.06);
+    color: var(--navy);
+    transition: .25s ease;
+}
+
+.security-badge-icon {
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--navy);
+    color: var(--gold);
+}
+
+.security-badge-icon .icon {
+    width: 17px;
+    height: 17px;
+}
+
+.security-badge small {
+    display: block;
+    color: var(--slate);
+    font-size: .55rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.security-badge strong {
+    display: block;
+    margin-top: 2px;
+    font-size: .7rem;
+}
+
+.role-tabs {
+    margin-top: 26px;
+    padding: 5px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    background: var(--surface);
+}
+
+.role-tab {
+    min-height: 42px;
+    border-radius: 7px;
+    background: transparent;
+    color: #526174;
+    cursor: pointer;
+    font-size: .72rem;
+    font-weight: 800;
+    transition: background .22s ease, color .22s ease, box-shadow .22s ease, transform .22s ease;
+}
+
+.role-tab:hover {
+    color: var(--navy);
+}
+
+.role-tab.active {
+    background: var(--navy);
+    color: var(--white);
+    box-shadow: 0 8px 20px rgba(10,25,47,.12);
+}
+
+.role-tab.active:hover {
+    color: var(--white);
+}
+
+.form-stage {
+    position: relative;
+    margin-top: 24px;
+}
+
+.role-form {
+    display: none;
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.role-form.active {
+    display: block;
+    animation: formFade .35s ease forwards;
+}
+
+.field {
+    margin-bottom: 15px;
+}
+
+.field label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 7px;
+    color: var(--navy);
+    font-size: .72rem;
+    font-weight: 800;
+}
+
+.field-hint {
+    color: var(--muted);
+    font-size: .58rem;
+    font-weight: 600;
+}
+
+.input-wrap {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    pointer-events: none;
+    transition: color .2s ease;
+}
+
+.form-control {
+    width: 100%;
+    min-height: 49px;
+    padding: 0 45px 0 43px;
+    border: 1px solid #D4DDE6;
+    border-radius: 8px;
+    outline: none;
+    background: #FCFDFE;
+    color: var(--charcoal);
+    font-size: .83rem;
+    transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.form-control:focus {
+    border-color: var(--gold);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(212,175,55,.12);
+}
+
+.input-wrap:focus-within .input-icon {
+    color: var(--gold);
+}
+
+.field.invalid .form-control {
+    border-color: rgba(180,35,24,.75);
+    box-shadow: 0 0 0 3px rgba(180,35,24,.08);
+}
+
+.field.valid .form-control {
+    border-color: rgba(31,110,82,.45);
+}
+
+.field-error {
+    min-height: 16px;
+    margin-top: 5px;
+    color: var(--danger);
+    font-size: .64rem;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(-2px);
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+.field.invalid .field-error {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.password-toggle {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    width: 34px;
+    height: 34px;
+    border-radius: 6px;
+    display: grid;
+    place-items: center;
+    transform: translateY(-50%);
+    background: transparent;
+    color: var(--slate);
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease;
+}
+
+.password-toggle:hover {
+    background: var(--surface);
+    color: var(--navy);
+}
+
+.auth-options {
+    margin: 2px 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.remember {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #475569;
+    font-size: .69rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.remember input {
+    appearance: none;
+    width: 17px;
+    height: 17px;
+    border: 1px solid #C8D2DD;
+    border-radius: 4px;
+    display: grid;
+    place-items: center;
+    background: var(--white);
+    cursor: pointer;
+}
+
+.remember input::after {
+    content: "";
+    width: 8px;
+    height: 4px;
+    border-left: 2px solid var(--white);
+    border-bottom: 2px solid var(--white);
+    transform: rotate(-45deg) scale(0);
+    transition: transform .15s ease;
+}
+
+.remember input:checked {
+    background: var(--navy);
+    border-color: var(--navy);
+}
+
+.remember input:checked::after {
+    transform: rotate(-45deg) scale(1);
+}
+
+.forgot-link {
+    background: transparent;
+    color: var(--crimson);
+    cursor: pointer;
+    font-size: .69rem;
+    font-weight: 800;
+    transition: color .2s ease;
+}
+
+.forgot-link:hover {
+    color: var(--navy);
+}
+
+.login-btn {
+    width: 100%;
+    min-height: 50px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    background: var(--crimson);
+    color: var(--white);
+    box-shadow: 0 14px 30px rgba(139,0,0,.2);
+    cursor: pointer;
+    font-size: .8rem;
+    font-weight: 800;
+    transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    background: var(--crimson-dark);
+    box-shadow: 0 18px 38px rgba(139,0,0,.27);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+.session-strip {
+    margin-top: 16px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    background: var(--surface);
+    color: #526174;
+    font-size: .64rem;
+}
+
+.session-left,
+.session-right {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.session-left .icon,
+.session-right .icon {
+    width: 15px;
+    height: 15px;
+    color: var(--gold);
+}
+
+.session-strip strong {
+    color: var(--navy);
+}
+
+.portal-footer {
+    flex: 0 0 auto;
+    background: var(--navy);
+    color: #C8D3DF;
+    border-top: 1px solid rgba(212,175,55,.3);
+}
+
+.footer-inner {
+    min-height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 17px;
+}
+
+.footer-links a {
+    color: #C4CFDC;
+    font-size: .68rem;
+    font-weight: 700;
+    transition: color .2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.footer-security {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 11px;
+    color: #9FADBC;
+    font-size: .63rem;
+}
+
+.ssl-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--gold);
+    font-weight: 800;
+}
+
+.ssl-tag .icon {
+    width: 14px;
+    height: 14px;
+}
+
+.footer-divider {
+    width: 1px;
+    height: 15px;
+    background: rgba(255,255,255,.15);
+}
+
+.toast-stack {
+    position: fixed;
+    z-index: 3000;
+    top: 18px;
+    right: 18px;
+    width: min(calc(100% - 36px), 360px);
+    pointer-events: none;
+}
+
+.toast {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 13px 14px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 36px 1fr auto;
+    gap: 10px;
+    align-items: center;
+    background: var(--white);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    transform: translateX(20px);
+    animation: toastIn .3s ease forwards;
+    pointer-events: auto;
+}
+
+.toast.success {
+    border-left: 4px solid var(--success);
+}
+
+.toast.error {
+    border-left: 4px solid var(--danger);
+}
+
+.toast-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.toast.success .toast-icon {
+    background: rgba(31,110,82,.08);
+    color: var(--success);
+}
+
+.toast.error .toast-icon {
+    background: rgba(180,35,24,.08);
+    color: var(--danger);
+}
+
+.toast-icon .icon {
+    width: 18px;
+    height: 18px;
+}
+
+.toast-copy strong {
+    display: block;
+    color: var(--navy);
+    font-size: .72rem;
+}
+
+.toast-copy span {
+    display: block;
+    margin-top: 2px;
+    color: var(--slate);
+    font-size: .64rem;
+}
+
+.toast-close {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+}
+
+.toast-close:hover {
+    background: var(--surface);
+    color: var(--navy);
+}
+
+.toast.hide {
+    animation: toastOut .28s ease forwards;
+}
+
+.recovery-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2500;
+    padding: 18px;
+    display: grid;
+    place-items: center;
+    background: rgba(7,18,33,.76);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .28s ease, visibility .28s ease;
+}
+
+.recovery-modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.recovery-card {
+    width: min(100%, 500px);
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background: var(--white);
+    box-shadow: 0 38px 100px rgba(0,0,0,.34);
+    transform: translateY(26px) scale(.98);
+    transition: transform .32s cubic-bezier(.22,.75,.2,1);
+}
+
+.recovery-modal.open .recovery-card {
+    transform: translateY(0) scale(1);
+}
+
+.recovery-head {
+    position: relative;
+    padding: 28px 30px 22px;
+    background: var(--navy);
+    color: var(--white);
+    border-bottom: 3px solid var(--gold);
+}
+
+.recovery-head small {
+    color: var(--gold);
+    font-size: .64rem;
+    font-weight: 800;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+}
+
+.recovery-head h3 {
+    margin-top: 6px;
+    padding-right: 50px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.8rem;
+    line-height: 1.12;
+}
+
+.recovery-head p {
+    margin-top: 8px;
+    color: #C7D2DF;
+    font-size: .78rem;
+}
+
+.recovery-close {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: rgba(255,255,255,.08);
+    color: var(--white);
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.recovery-close:hover {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+.recovery-body {
+    padding: 27px 30px 30px;
+}
+
+.recovery-role {
+    margin-bottom: 17px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    background: var(--surface);
+    color: var(--navy);
+    font-size: .71rem;
+    font-weight: 800;
+}
+
+.recovery-role .icon {
+    width: 17px;
+    height: 17px;
+    color: var(--gold);
+}
+
+.recovery-body .field {
+    margin-bottom: 0;
+}
+
+.recovery-actions {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 9px;
+}
+
+.recovery-submit,
+.recovery-cancel {
+    min-height: 46px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: .75rem;
+    font-weight: 800;
+    transition: .22s ease;
+}
+
+.recovery-submit {
+    background: var(--crimson);
+    color: var(--white);
+}
+
+.recovery-submit:hover {
+    background: var(--crimson-dark);
+}
+
+.recovery-cancel {
+    padding: 0 14px;
+    background: var(--surface);
+    color: var(--navy);
+}
+
+.recovery-cancel:hover {
+    background: #E3E8EE;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes formFade {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes livePulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: .35;
+        transform: scale(.75);
+    }
+}
+
+@keyframes toastIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes toastOut {
+    to {
+        opacity: 0;
+        transform: translateX(28px);
+    }
+}
+
+@media (max-width: 1020px) {
+    body {
+        min-height: 100vh;
+    }
+
+    .portal-main {
+        align-items: flex-start;
+        padding: 24px 0;
+    }
+
+    .auth-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .info-panel {
+        padding: 32px;
+    }
+
+    .info-panel::before {
+        inset: 12px;
+    }
+
+    .info-title {
+        margin-top: 24px;
+    }
+
+    .notice-board {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .notice-title {
+        grid-column: 1 / -1;
+    }
+
+    .auth-panel {
+        padding: 34px;
+    }
+
+    .footer-inner {
+        padding: 14px 0;
+        min-height: 0;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .footer-security {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 700px) {
+    .container {
+        width: min(calc(100% - 26px), var(--container));
+    }
+
+    .header-inner {
+        min-height: 68px;
+    }
+
+    .brand-mark {
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
+    }
+
+    .brand-text strong {
+        font-size: 1rem;
+    }
+
+    .brand-text small {
+        font-size: .51rem;
+    }
+
+    .back-home span {
+        display: none;
+    }
+
+    .back-home {
+        width: 42px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .portal-main {
+        padding: 16px 0;
+    }
+
+    .auth-shell {
+        border-radius: 18px;
+    }
+
+    .info-panel {
+        padding: 28px 22px;
+    }
+
+    .crest {
+        width: 76px;
+        height: 76px;
+    }
+
+    .info-title h1 {
+        font-size: 2rem;
+    }
+
+    .notice-board {
+        grid-template-columns: 1fr;
+    }
+
+    .notice-title {
+        grid-column: auto;
+    }
+
+    .auth-panel {
+        padding: 28px 22px;
+    }
+
+    .auth-heading {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .security-badge {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .role-tabs {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-options {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .session-strip {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .footer-divider {
+        display: none;
+    }
+
+    .footer-security {
+        gap: 8px 12px;
+    }
+}
+
+@media (max-width: 470px) {
+    .info-panel {
+        display: none;
+    }
+
+    .auth-panel {
+        padding: 24px 18px;
+    }
+
+    .auth-heading-copy h2 {
+        font-size: 1.85rem;
+    }
+
+    .recovery-head,
+    .recovery-body {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .recovery-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .recovery-cancel {
+        width: 100%;
+    }
+
+    .footer-links {
+        gap: 10px 14px;
+    }
+}
+
+@media (max-height: 760px) and (min-width: 1021px) {
+    .portal-main {
+        align-items: center;
+        padding: 18px 0;
+    }
+
+    .info-panel,
+    .auth-panel {
+        padding-top: 26px;
+        padding-bottom: 26px;
+    }
+
+    .crest {
+        width: 78px;
+        height: 78px;
+    }
+
+    .info-title {
+        margin-top: 22px;
+    }
+
+    .info-title h1 {
+        font-size: 2.4rem;
+    }
+
+    .notice-board {
+        margin-top: 20px;
+    }
+
+    .helpdesk {
+        margin-top: 18px;
+    }
+
+    .role-tabs {
+        margin-top: 20px;
+    }
+
+    .form-stage {
+        margin-top: 18px;
+    }
+
+    .field {
+        margin-bottom: 11px;
+    }
+
+    .form-control {
+        min-height: 45px;
+    }
+
+    .login-btn {
+        min-height: 46px;
+    }
+
+    .session-strip {
+        margin-top: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="top-header">
+    <div class="container header-inner">
+        <a href="index.html" class="brand" aria-label="DevX Computer Institute home">
+            <span class="brand-mark">DX</span>
+            <span class="brand-text">
+                <strong>DevX Computer Institute</strong>
+                <small>Secure Academic Portal</small>
+            </span>
+        </a>
+
+        <a href="index.html" class="back-home">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M19 12H5"/><path d="m11 18-6-6 6-6"/></svg>
+            <span>Back to Institute Website</span>
+        </a>
+    </div>
+</header>
+
+<main class="portal-main">
+    <div class="container">
+        <section class="auth-shell" aria-label="DevX secure portal login">
+            <aside class="info-panel">
+                <div class="crest">
+                    <div class="crest-inner">
+                        <strong>DX</strong>
+                        <small>Est. 2012</small>
+                    </div>
+                </div>
+
+                <div class="info-title">
+                    <small>Authorized Academic Access</small>
+                    <h1>DevX Digital Campus Portal</h1>
+                    <p>Secure access for students, faculty members and authorized administrative staff. Use only the credentials assigned to your institutional account.</p>
+                </div>
+
+                <div class="notice-board">
+                    <div class="notice-title">
+                        <span>Live Notice Board</span>
+                        <span class="live-indicator"><span class="live-dot"></span> Active</span>
+                    </div>
+
+                    <div class="notice-item">
+                        <strong>
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M5 3h14v18H5z"/><path d="M8 7h8"/><path d="M8 11h8"/><path d="M8 15h5"/></svg>
+                            Admit Cards Released
+                        </strong>
+                        <span>Eligible students can access current examination admit cards from the student dashboard.</span>
+                    </div>
+
+                    <div class="notice-item">
+                        <strong>
+                            <svg class="icon" viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2.5 21a6.5 6.5 0 0 1 13 0"/><path d="M17 8h5"/><path d="M19.5 5.5v5"/></svg>
+                            Batch Enrollments Active
+                        </strong>
+                        <span>New technical cohorts and practical lab batches are currently open for eligible learners.</span>
+                    </div>
+                </div>
+
+                <div class="helpdesk">
+                    <span class="helpdesk-label">Portal Helpdesk</span>
+
+                    <div class="helpdesk-links">
+                        <a href="tel:+919876543210" class="helpdesk-link">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.2 12.8 19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3"/></svg>
+                            +91 98765 43210
+                        </a>
+
+                        <a href="mailto:support@devxinstitute.in" class="helpdesk-link">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+                            Portal Support
+                        </a>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="auth-panel">
+                <div class="auth-heading">
+                    <div class="auth-heading-copy">
+                        <small>Secure Authentication</small>
+                        <h2>Access Your Portal</h2>
+                        <p>Select your authorized role and enter the credentials issued by DevX Computer Institute.</p>
+                    </div>
+
+                    <div class="security-badge" id="securityBadge">
+                        <span class="security-badge-icon" id="securityBadgeIcon">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-3 8-10V5l-8-3-8 3v7c0 7 8 10 8 10z"/><path d="m9 12 2 2 4-5"/></svg>
+                        </span>
+                        <span>
+                            <small>Security Profile</small>
+                            <strong id="securityBadgeText">Student Secure Access</strong>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="role-tabs" role="tablist" aria-label="Portal role selection">
+                    <button class="role-tab active" type="button" data-role="student" role="tab" aria-selected="true">Student Portal</button>
+                    <button class="role-tab" type="button" data-role="faculty" role="tab" aria-selected="false">Faculty Portal</button>
+                    <button class="role-tab" type="button" data-role="admin" role="tab" aria-selected="false">Admin Desk</button>
+                </div>
+
+                <div class="form-stage">
+                    <form class="role-form active" id="studentForm" data-role="student" novalidate>
+                        <div class="field">
+                            <label for="studentId">Student ID <span class="field-hint">Required</span></label>
+                            <div class="input-wrap">
+                                <svg class="icon input-icon" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8" cy="11" r="2"/><path d="M12 9h5"/><path d="M12 13h5"/></svg>
+                                <input class="form-control credential-input" id="studentId" type="text" autocomplete="username" placeholder="e.g. DX2026-1042" data-kind="identity">
+                            </div>
+                            <div class="field-error">Enter a valid Student ID with at least 5 characters.</div>
+                        </div>
+
+                        <div class="field">
+                            <label for="studentPassword">Password <span class="field-hint">Required</span></label>
+                            <div class="input-wrap">
+                                <svg class="icon input-icon" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+                                <input class="form-control password-input" id="studentPassword" type="password" autocomplete="current-password" placeholder="Enter your portal password" data-kind="password">
+                                <button class="password-toggle" type="button" aria-label="Show password">
+                                    <svg class="icon eye-open" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                                </button>
+                            </div>
+                            <div class="field-error">Password must contain at least 6 characters.</div>
+                        </div>
+
+                        <div class="auth-options">
+                            <label class="remember">
+                                <input type="checkbox">
+                                Remember this device
+                            </label>
+                            <button class="forgot-link" type="button">Forgot Password?</button>
+                        </div>
+
+                        <button class="login-btn" type="submit">
+                            Access Portal Dashboard
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                        </button>
+                    </form>
+
+                    <form class="role-form" id="facultyForm" data-role="faculty" novalidate>
+                        <div class="field">
+                            <label for="facultyId">Faculty ID <span class="field-hint">Required</span></label>
+                            <div class="input-wrap">
+                                <svg class="icon input-icon" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a6.5 6.5 0 0 1 13 0"/></svg>
+                                <input class="form-control credential-input" id="facultyId" type="text" autocomplete="username" placeholder="e.g. FAC-2087" data-kind="identity">
+                            </div>
+                            <div class="field-error">Enter a valid Faculty ID with at least 5 characters.</div>
+                        </div>
+
+                        <div class="field">
+                            <label for="facultyPassword">Faculty Password <span class="field-hint">Required</span></label>
+                            <div class="input-wrap">
+                                <svg class="icon input-icon" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+                                <input class="form-control password-input" id="facultyPassword" type="password" autocomplete="current-password" placeholder="Enter faculty account password" data-kind="password">
+                                <button class="password-toggle" type="button" aria-label="Show password">
+                                    <svg class="icon eye-open" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                                </button>
+                            </div>
+                            <div class="field-error">Password must contain at least 6 characters.</div>
+                        </div>
+
+                        <div class="auth-options">
+                            <label class="remember">
+                                <input type="checkbox">
+                                Trust faculty workstation
+                            </label>
+                            <button class="forgot-link" type="button">Forgot Password?</button>
+                        </div>
+
+                        <button class="login-btn" type="submit">
+                            Access Portal Dashboard
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                        </button>
+                    </form>
+
+                    <form class="role-form" id="adminForm" data-role="admin" novalidate>
+                        <div class="field">
+                            <label for="adminId">Administrator ID <span class="field-hint">Restricted</span></label>
+                            <div class="input-wrap">
+                                <svg class="icon input-icon" viewBox="0 0 24 24"><path d="M12 22s8-3 8-10V5l-8-3-8 3v7c0 7 8 10 8 10z"/><path d="M9 12h6"/><path d="M12 9v6"/></svg>
+                                <input class="form-control credential-input" id="adminId" type="text" autocomplete="username" placeholder="Authorized administrator identifier" data-kind="identity">
+                            </div>
+                            <div class="field-error">Enter a valid Administrator ID with at least 5 characters.</div>
+                        </div>
+
+                        <div class="field">
+                            <label for="adminPassword">Secure Password <span class="field-hint">Restricted</span></label>
+                            <div class="input-wrap">
+                                <svg class="icon input-icon" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+                                <input class="form-control password-input" id="adminPassword" type="password" autocomplete="current-password" placeholder="Enter administrative password" data-kind="password">
+                                <button class="password-toggle" type="button" aria-label="Show password">
+                                    <svg class="icon eye-open" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                                </button>
+                            </div>
+                            <div class="field-error">Password must contain at least 8 characters for administrative access.</div>
+                        </div>
+
+                        <div class="auth-options">
+                            <label class="remember">
+                                <input type="checkbox">
+                                Remember secured workstation
+                            </label>
+                            <button class="forgot-link" type="button">Recover Access</button>
+                        </div>
+
+                        <button class="login-btn" type="submit">
+                            Access Portal Dashboard
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="session-strip">
+                    <span class="session-left">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-3 8-10V5l-8-3-8 3v7c0 7 8 10 8 10z"/><path d="m9 12 2 2 4-5"/></svg>
+                        <span><strong>TLS Protected Session</strong> · Encrypted transport</span>
+                    </span>
+
+                    <span class="session-right">
+                        <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                        <span>Session <strong id="sessionCounter">00:00</strong></span>
+                    </span>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer class="portal-footer">
+    <div class="container footer-inner">
+        <nav class="footer-links" aria-label="Footer navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="design.html">Design</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="footer-security">
+            <span class="ssl-tag">
+                <svg class="icon" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+                SSL Protected
+            </span>
+            <span class="footer-divider"></span>
+            <span>© 2026 DevX Computer Institute</span>
+            <span class="footer-divider"></span>
+            <span>Authorized Portal Access Only</span>
+        </div>
+    </div>
+</footer>
+
+<div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+<div class="recovery-modal" id="recoveryModal" aria-hidden="true">
+    <div class="recovery-card" role="dialog" aria-modal="true" aria-labelledby="recoveryTitle">
+        <div class="recovery-head">
+            <small>Secure Credential Recovery</small>
+            <h3 id="recoveryTitle">Recover Portal Access</h3>
+            <p>Enter the official email address associated with your DevX account. Recovery instructions will be prepared for the selected portal role.</p>
+
+            <button class="recovery-close" id="recoveryClose" type="button" aria-label="Close password recovery">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+        </div>
+
+        <form class="recovery-body" id="recoveryForm" novalidate>
+            <div class="recovery-role">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-3 8-10V5l-8-3-8 3v7c0 7 8 10 8 10z"/></svg>
+                <span id="recoveryRoleText">Student Portal Recovery</span>
+            </div>
+
+            <div class="field" id="recoveryField">
+                <label for="recoveryEmail">Registered Email Address <span class="field-hint">Required</span></label>
+                <div class="input-wrap">
+                    <svg class="icon input-icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+                    <input class="form-control" id="recoveryEmail" type="email" autocomplete="email" placeholder="name@example.com">
+                </div>
+                <div class="field-error">Enter a valid registered email address.</div>
+            </div>
+
+            <div class="recovery-actions">
+                <button class="recovery-submit" type="submit">Send Recovery Instructions</button>
+                <button class="recovery-cancel" id="recoveryCancel" type="button">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+const roleTabs = document.querySelectorAll(".role-tab")
+const roleForms = document.querySelectorAll(".role-form")
+const securityBadgeText = document.getElementById("securityBadgeText")
+const securityBadgeIcon = document.getElementById("securityBadgeIcon")
+const toastStack = document.getElementById("toastStack")
+const recoveryModal = document.getElementById("recoveryModal")
+const recoveryClose = document.getElementById("recoveryClose")
+const recoveryCancel = document.getElementById("recoveryCancel")
+const recoveryForm = document.getElementById("recoveryForm")
+const recoveryEmail = document.getElementById("recoveryEmail")
+const recoveryField = document.getElementById("recoveryField")
+const recoveryRoleText = document.getElementById("recoveryRoleText")
+const sessionCounter = document.getElementById("sessionCounter")
+let activeRole = "student"
+let previousFocus = null
+let sessionSeconds = 0
+
+const roleProfiles = {
+    student: {
+        badge: "Student Secure Access",
+        recovery: "Student Portal Recovery",
+        minPassword: 6,
+        icon: '<svg class="icon" viewBox="0 0 24 24"><path d="m3 10 9-5 9 5-9 5z"/><path d="M7 12v5c3 2 7 2 10 0v-5"/></svg>'
+    },
+    faculty: {
+        badge: "Faculty Verified Access",
+        recovery: "Faculty Portal Recovery",
+        minPassword: 6,
+        icon: '<svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a6.5 6.5 0 0 1 13 0"/></svg>'
+    },
+    admin: {
+        badge: "Restricted Admin Access",
+        recovery: "Administrative Access Recovery",
+        minPassword: 8,
+        icon: '<svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-3 8-10V5l-8-3-8 3v7c0 7 8 10 8 10z"/><path d="m9 12 2 2 4-5"/></svg>'
+    }
+}
+
+const setRole = role => {
+    activeRole = role
+
+    roleTabs.forEach(tab => {
+        const selected = tab.dataset.role === role
+        tab.classList.toggle("active", selected)
+        tab.setAttribute("aria-selected", String(selected))
+    })
+
+    roleForms.forEach(form => {
+        form.classList.toggle("active", form.dataset.role === role)
+    })
+
+    securityBadgeText.textContent = roleProfiles[role].badge
+    securityBadgeIcon.innerHTML = roleProfiles[role].icon
+    recoveryRoleText.textContent = roleProfiles[role].recovery
+}
+
+roleTabs.forEach(tab => {
+    tab.addEventListener("click", () => setRole(tab.dataset.role))
+})
+
+document.querySelectorAll(".password-toggle").forEach(button => {
+    button.addEventListener("click", () => {
+        const input = button.parentElement.querySelector(".password-input")
+        const show = input.type === "password"
+
+        input.type = show ? "text" : "password"
+        button.setAttribute("aria-label", show ? "Hide password" : "Show password")
+        button.innerHTML = show
+            ? '<svg class="icon" viewBox="0 0 24 24"><path d="M3 3l18 18"/><path d="M10.6 10.6A2 2 0 0 0 13.4 13.4"/><path d="M9.9 5.2A10.7 10.7 0 0 1 12 5c6.5 0 10 7 10 7a17 17 0 0 1-2.1 3.1"/><path d="M6.2 6.2C3.5 8 2 12 2 12s3.5 7 10 7a9.8 9.8 0 0 0 4.2-.9"/></svg>'
+            : '<svg class="icon" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>'
+    })
+})
+
+const showToast = (type, title, message) => {
+    const toast = document.createElement("div")
+    toast.className = `toast ${type}`
+
+    const icon = type === "success"
+        ? '<svg class="icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>'
+        : '<svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><path d="M12 17h.01"/></svg>'
+
+    toast.innerHTML = `
+        <div class="toast-icon">${icon}</div>
+        <div class="toast-copy">
+            <strong>${title}</strong>
+            <span>${message}</span>
+        </div>
+        <button class="toast-close" type="button" aria-label="Dismiss notification">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+    `
+
+    toastStack.appendChild(toast)
+
+    const removeToast = () => {
+        if (!toast.isConnected) return
+        toast.classList.add("hide")
+        setTimeout(() => toast.remove(), 280)
+    }
+
+    toast.querySelector(".toast-close").addEventListener("click", removeToast)
+    setTimeout(removeToast, 4300)
+}
+
+const validateField = field => {
+    const input = field.querySelector(".form-control")
+    const kind = input.dataset.kind
+    let valid = false
+
+    if (kind === "identity") {
+        valid = input.value.trim().length >= 5
+    }
+
+    if (kind === "password") {
+        valid = input.value.length >= roleProfiles[activeRole].minPassword
+    }
+
+    field.classList.toggle("valid", valid)
+    field.classList.toggle("invalid", !valid)
+
+    return valid
+}
+
+document.querySelectorAll(".credential-input, .password-input").forEach(input => {
+    input.addEventListener("input", () => {
+        const field = input.closest(".field")
+        if (field.classList.contains("invalid") || input.value.length > 0) {
+            validateField(field)
+        }
+    })
+
+    input.addEventListener("blur", () => validateField(input.closest(".field")))
+})
+
+roleForms.forEach(form => {
+    form.addEventListener("submit", event => {
+        event.preventDefault()
+
+        const fields = Array.from(form.querySelectorAll(".field"))
+        const valid = fields.map(validateField).every(Boolean)
+
+        if (!valid) {
+            const firstInvalid = form.querySelector(".field.invalid .form-control")
+
+            if (firstInvalid) {
+                firstInvalid.focus()
+            }
+
+            showToast("error", "Access Validation Failed", "Check your portal ID and password before attempting to continue.")
+            return
+        }
+
+        showToast("success", "Credentials Accepted", `${roleProfiles[activeRole].badge} validation completed for this interface demonstration.`)
+
+        const submitButton = form.querySelector(".login-btn")
+        const originalHTML = submitButton.innerHTML
+
+        submitButton.innerHTML = `
+            <svg class="icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>
+            Access Verified
+        `
+
+        submitButton.style.background = "var(--success)"
+
+        setTimeout(() => {
+            submitButton.innerHTML = originalHTML
+            submitButton.style.background = ""
+        }, 1800)
+    })
+})
+
+const openRecovery = () => {
+    previousFocus = document.activeElement
+    recoveryRoleText.textContent = roleProfiles[activeRole].recovery
+    recoveryEmail.value = ""
+    recoveryField.classList.remove("valid", "invalid")
+    recoveryModal.classList.add("open")
+    recoveryModal.setAttribute("aria-hidden", "false")
+    document.body.classList.add("modal-open")
+
+    setTimeout(() => recoveryEmail.focus(), 60)
+}
+
+const closeRecovery = () => {
+    recoveryModal.classList.remove("open")
+    recoveryModal.setAttribute("aria-hidden", "true")
+    document.body.classList.remove("modal-open")
+
+    if (previousFocus) previousFocus.focus()
+}
+
+document.querySelectorAll(".forgot-link").forEach(button => {
+    button.addEventListener("click", openRecovery)
+})
+
+recoveryClose.addEventListener("click", closeRecovery)
+recoveryCancel.addEventListener("click", closeRecovery)
+
+recoveryModal.addEventListener("click", event => {
+    if (event.target === recoveryModal) {
+        closeRecovery()
+    }
+})
+
+const isValidEmail = value => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(value.trim())
+
+recoveryEmail.addEventListener("input", () => {
+    if (!recoveryEmail.value) {
+        recoveryField.classList.remove("valid", "invalid")
+        return
+    }
+
+    const valid = isValidEmail(recoveryEmail.value)
+    recoveryField.classList.toggle("valid", valid)
+    recoveryField.classList.toggle("invalid", !valid)
+})
+
+recoveryForm.addEventListener("submit", event => {
+    event.preventDefault()
+
+    const valid = isValidEmail(recoveryEmail.value)
+    recoveryField.classList.toggle("valid", valid)
+    recoveryField.classList.toggle("invalid", !valid)
+
+    if (!valid) {
+        recoveryEmail.focus()
+        showToast("error", "Recovery Request Incomplete", "Enter a valid registered email address.")
+        return
+    }
+
+    closeRecovery()
+    showToast("success", "Recovery Request Prepared", `${roleProfiles[activeRole].recovery} instructions have been prepared for the supplied email address.`)
+})
+
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && recoveryModal.classList.contains("open")) {
+        closeRecovery()
+    }
+})
+
+const updateSessionCounter = () => {
+    sessionSeconds += 1
+    const minutes = String(Math.floor(sessionSeconds / 60)).padStart(2, "0")
+    const seconds = String(sessionSeconds % 60).padStart(2, "0")
+    sessionCounter.textContent = `${minutes}:${seconds}`
+}
+
+setInterval(updateSessionCounter, 1000)
+setRole("student")
+</script>
+
+</body>
+</html>
