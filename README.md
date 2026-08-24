@@ -45,8 +45,7 @@ The project features dynamic course discovery, visual student portfolio showcase
 ---
 
 ## 📂 Project Structure & Navigation Map
-
-
+```text
 devx-computer-institute/
 │
 ├── 📄 index.html        # Main Landing Page featuring Hero Showcase & Impact Stats
@@ -55,4 +54,4 @@ devx-computer-institute/
 ├── 📄 design.html       # Student Portfolio Gallery, Creative Labs & Lightbox Showcase
 ├── 📄 contact.html      # Direct Admissions Form, Interactive FAQ Accordion & Location Map
 └── 📄 login.html        # Secure Multi-Role Authentication Portal & Helpdesk Terminal
-https://github.com/gyan-builds/DevX-Computer-Institute.git DevX-Computer-Institute
+
